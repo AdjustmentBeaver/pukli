@@ -3,11 +3,11 @@
 
 void Game_state_machine::push_state(Game_state* state) {
 	m_states.push_back(state);
-	m_states.back()->onEnter();
+	m_states.back()->on_enter();
 }
 void Game_state_machine::pop_state() {
 	if (!m_states.empty()) {
-		if (m_states.back()->onExit()) {
+		if (m_states.back()->on_exit()) {
 			delete m_states.back();
 			m_states.pop_back();
 		}

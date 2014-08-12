@@ -33,7 +33,7 @@ bool Menu_state::on_enter() {
 
 	return true;
 }
-bool Menu_state::on_Exit() {
+bool Menu_state::on_exit() {
 	LOG << "exiting Menu_state";
 
 	for (std::vector<Game_object*>::const_iterator i = m_game_objects.begin(); i != m_game_objects.end(); i++) {
