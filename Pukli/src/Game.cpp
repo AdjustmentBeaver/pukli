@@ -77,11 +77,6 @@ void Game::clean() {
 
 void Game::handleEvents() {
 	The_Input_handler->update();
-	if (The_Input_handler->joysticks_initialized())
-		if (The_Input_handler->get_joy_button_state(0, 1))
-			m_game_state_machine->change_state(new Play_state());
-	if (The_Input_handler->is_key_down(SDL_SCANCODE_ESCAPE))
-		The_Game->quit();
 }
 
 void Game::quit() {
