@@ -25,8 +25,11 @@ bool Menu_state::on_enter() {
 	if (!The_Texture_manager->load("../assets/btn_exit.png", "btn_exit", The_Game->get_renderer()))
 		return false;
 
-	m_game_objects.push_back(new Menu_button(new Loader_params(100, 100, 150, 50, "btn_start"), menu_to_play));
-	m_game_objects.push_back(new Menu_button(new Loader_params(100, 155, 150, 50, "btn_exit"), menu_to_exit));
+	Game_object* btn_start = new Menu_button(new Loader_params(100, 100, 150, 50, "btn_start"),0);
+	Game_object* btn_exit = new Menu_button(new Loader_params(100, 155, 150, 50, "btn_exit"),0);
+
+	m_game_objects.push_back(btn_start);
+	m_game_objects.push_back(btn_exit);
 
 	return true;
 }
@@ -41,13 +44,4 @@ bool Menu_state::on_exit() {
 	The_Texture_manager->clear_from_texture_map("btn_exit");
 
 	return true;
-}
-
-void Menu_state::menu_to_play() {
-	LOG << "Play btn pressed";
-}
-
-void Menu_state::menu_to_exit() {
-	LOG << "Exit btn pressed";
-	The_Game->quit();
 }
