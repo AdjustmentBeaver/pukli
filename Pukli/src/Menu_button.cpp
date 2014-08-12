@@ -16,13 +16,17 @@ void Menu_button::update() {
 	double x = m_position.get_x();
 	double y = m_position.get_y();
 
-	m_current_frame = MOUSE_OUT;
-
 	if (mx < (x + m_width) && mx >= x && my < (y + m_height) && my >= y) {
-		m_current_frame = MOUSE_OVER;
-		if (The_Input_handler->get_mouse_button_state(LEFT)) {
+		if (The_Input_handler->get_mouse_button_state(LEFT) && m_released) {
 			m_current_frame = CLICKED;
+			m_callback();
+			m_released = false;
+		} else if (!The_Input_handler->get_mouse_button_state(LEFT)) {
+			m_released = true;
+			m_current_frame = MOUSE_OVER;
 		}
+	} else {
+		m_current_frame = MOUSE_OUT;
 	}
 }
 
