@@ -1,0 +1,30 @@
+#ifndef __TEXTURE_MANAGER_H__
+#define __TEXTURE_MANAGER_H__
+
+#include <string>
+#include <map>
+#include <SDL.h>
+#include <SDL_image.h>
+
+class Texture_manager {
+public:
+	bool load(std::string file_name, std::string id, SDL_Renderer* renderer);
+
+	void draw(std::string id, int x, int y, int width, int height, SDL_Renderer* renderer, SDL_RendererFlip flip = SDL_FLIP_NONE);
+	void draw_frame(std::string id, int x, int y, int width, int height, int current_row, int current_frame, SDL_Renderer* renderer, SDL_RendererFlip flip = SDL_FLIP_NONE);
+
+	static Texture_manager* instance() {
+		if (s_instance == 0)
+			s_instance = new Texture_manager();
+		return s_instance;
+	}
+	void clear_from_texture_map(std::string id) { m_texture_map.erase(id); }
+private:
+	Texture_manager() {}
+	std::map<std::string, SDL_Texture*> m_texture_map;
+	static Texture_manager* s_instance;
+};
+
+#define The_Texture_manager Texture_manager::instance()
+
+#endif
