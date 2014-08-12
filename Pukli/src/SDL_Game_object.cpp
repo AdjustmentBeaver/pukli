@@ -25,13 +25,10 @@ void SDL_Game_object::load(const Loader_params *pParams)
 	m_acceleration = Vec2D(0, 0);  
 	m_width = pParams->get_width();  
 	m_height = pParams->get_height(); 
-	
-	/*
-	m_textureID = pParams->get_texture_id();
-	m_currentRow = 1;  
-	m_currentFrame = 1; 
-	m_numFrames = pParams->getNumFrames(); 
-	*/
+	m_texture_id = pParams->get_texture_id();
+	m_current_row = 1;  
+	m_current_frame = 1; 
+	m_num_frames = pParams->get_num_frames();
 }
 
 void SDL_Game_object::draw() {

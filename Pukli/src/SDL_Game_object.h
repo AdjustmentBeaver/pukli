@@ -22,6 +22,7 @@ protected:
 	int m_current_row;
 	int m_current_frame;
 	std::string m_texture_id;
+	int m_num_frames;
 };
 
 #endif
