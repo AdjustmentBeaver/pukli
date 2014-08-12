@@ -16,15 +16,15 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	int flags = fullscreen ? SDL_WINDOW_FULLSCREEN : SDL_WINDOW_SHOWN;
 
 	if (SDL_Init(SDL_INIT_EVERYTHING) >= 0) {
-		LOG << "[SUCC] SDL Init" ;
+		LOG << "[SUCC] SDL Init";
 		m_window = SDL_CreateWindow(title, xpos, ypos, width, height, flags);
 
 		if (m_window != 0) {
-			LOG << "[SUCC] Window Init" ;
+			LOG << "[SUCC] Window Init";
 			m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_ACCELERATED);
 
 			if (m_renderer != 0) {
-				LOG << "[SUCC] Renderer Init" ;
+				LOG << "[SUCC] Renderer Init";
 				SDL_SetRenderDrawColor(m_renderer, DEF_RENDER_COLOR_ALPHA);
 
 				if (!The_Texture_manager->load("../assets/BombExploding.png", "bomb", m_renderer))
@@ -32,18 +32,18 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 
 			} else {
-				LOG << "[FAIL] Renderer Init" ;
+				LOG << "[FAIL] Renderer Init";
 				return false;
 			}
 		} else {
-			LOG << "[FAIL] Windows Init" ;
+			LOG << "[FAIL] Windows Init";
 			return false;
 		}
 	} else {
-		LOG << "[FAIL] SDL Init" ;
+		LOG << "[FAIL] SDL Init";
 		return false;
 	}
-	LOG << "[SUCC] Game Init" ;
+	LOG << "[SUCC] Game Init";
 	m_running = true;
 
 	The_Input_handler->init_joysticks();
@@ -66,7 +66,7 @@ void Game::render() {
 }
 
 void Game::clean() {
-	LOG << "[INFO] Cleanup" ;
+	LOG << "[INFO] Cleanup";
 
 	The_Input_handler->clean();
 
@@ -77,9 +77,9 @@ void Game::clean() {
 
 void Game::handleEvents() {
 	The_Input_handler->update();
-
-	if (The_Input_handler->get_joy_button_state(0, 1))
-		m_game_state_machine->change_state(new Play_state());
+	if (The_Input_handler->joysticks_initialized())
+		if (The_Input_handler->get_joy_button_state(0, 1))
+			m_game_state_machine->change_state(new Play_state());
 }
 
 void Game::quit() {
