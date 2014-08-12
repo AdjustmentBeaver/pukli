@@ -21,6 +21,7 @@
     <ClInclude Include="src\Loader_params.h" />
     <ClInclude Include="src\Menu_button.h" />
     <ClInclude Include="src\Menu_state.h" />
+    <ClInclude Include="src\Pause_state.h" />
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\Player_creator.h" />
     <ClInclude Include="src\Play_state.h" />
@@ -38,6 +39,7 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Menu_button.cpp" />
     <ClCompile Include="src\Menu_state.cpp" />
+    <ClCompile Include="src\Pause_state.cpp" />
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\Play_state.cpp" />
     <ClCompile Include="src\SDL_Game_object.cpp" />
@@ -80,7 +82,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>EnableAllWarnings</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
