@@ -15,6 +15,11 @@ void Player::update() {
 	SDL_Game_object::update();
 }
 
+void Player::load(const Loader_params *pParams) 
+{
+	SDL_Game_object::load(pParams); 
+}
+
 void Player::clean() {}
 
 void Player::handleInput() {
