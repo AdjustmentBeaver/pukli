@@ -17,7 +17,7 @@ void Menu_state::render() {
 	}
 }
 
-bool Menu_state::onEnter() {
+bool Menu_state::on_enter() {
 	LOG << "entering Menu_state";
 
 	if (!The_Texture_manager->load("../assets/btn_start.png", "btn_start", The_Game->get_renderer()))
@@ -33,7 +33,7 @@ bool Menu_state::onEnter() {
 
 	return true;
 }
-bool Menu_state::onExit() {
+bool Menu_state::on_Exit() {
 	LOG << "exiting Menu_state";
 
 	for (std::vector<Game_object*>::const_iterator i = m_game_objects.begin(); i != m_game_objects.end(); i++) {

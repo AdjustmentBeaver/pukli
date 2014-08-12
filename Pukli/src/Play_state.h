@@ -8,8 +8,8 @@ public:
 	void update();
 	void render();
 
-	bool onEnter();
-	bool onExit();
+	bool on_enter();
+	bool on_exit();
 
 	const std::string get_state_id() const { return s_play_id; };
 private:
