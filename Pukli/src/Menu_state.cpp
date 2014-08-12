@@ -1,4 +1,5 @@
 #include "Menu_state.h"
+#include "Play_state.h"
 #include "Menu_button.h"
 #include "utils.h"
 #include "Game.h"
@@ -7,13 +8,13 @@
 const std::string Menu_state::s_menu_id = "MENU";
 
 void Menu_state::update() {
-	for (std::vector<Game_object*>::const_iterator i = m_game_objects.begin(); i != m_game_objects.end(); i++) {
-		(*i)->update();
+	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
+		m_game_objects[i]->update();
 	}
 }
 void Menu_state::render() {
-	for (std::vector<Game_object*>::const_iterator i = m_game_objects.begin(); i != m_game_objects.end(); i++) {
-		(*i)->draw();
+	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
+		m_game_objects[i]->draw();
 	}
 }
 
@@ -25,11 +26,8 @@ bool Menu_state::on_enter() {
 	if (!The_Texture_manager->load("../assets/btn_exit.png", "btn_exit", The_Game->get_renderer()))
 		return false;
 
-	Game_object* btn_start = new Menu_button(new Loader_params(100, 100, 150, 50, "btn_start"),0);
-	Game_object* btn_exit = new Menu_button(new Loader_params(100, 155, 150, 50, "btn_exit"),0);
-
-	m_game_objects.push_back(btn_start);
-	m_game_objects.push_back(btn_exit);
+	m_game_objects.push_back(new Menu_button(new Loader_params(100, 100, 150, 50, "btn_start"), menu_to_play));
+	m_game_objects.push_back(new Menu_button(new Loader_params(100, 155, 150, 50, "btn_exit"), menu_to_exit));
 
 	return true;
 }
@@ -47,6 +45,7 @@ bool Menu_state::on_exit() {
 }
 
 void Menu_state::menu_to_play() {
+	The_Game->get_state_machine()->change_state(new Play_state());
 	LOG << "Play btn pressed";
 }
 
