@@ -15,7 +15,6 @@ SDL_Game_object::SDL_Game_object(const Loader_params* params) : Game_object(para
 void SDL_Game_object::update() {
 	m_velocity += m_acceleration;
 	m_position += m_velocity;
-	m_current_frame = int((SDL_GetTicks()/100)%13);
 }
 
 void SDL_Game_object::load(const Loader_params *pParams) 
