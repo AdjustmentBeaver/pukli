@@ -11,6 +11,7 @@ public:
 	void update();
 	void clean();
 
+	~Menu_button() {}
 private:
 	static const enum BUTTON_STATE {
 		MOUSE_OUT,
