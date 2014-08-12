@@ -1,42 +1,113 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="src\Enemy.cpp" />
-    <ClCompile Include="src\Game.cpp" />
-    <ClCompile Include="src\Game_state_machine.cpp" />
-    <ClCompile Include="src\Input_handler.cpp" />
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Menu_button.cpp" />
-    <ClCompile Include="src\Menu_state.cpp" />
-    <ClCompile Include="src\Player.cpp" />
-    <ClCompile Include="src\Play_state.cpp" />
-    <ClCompile Include="src\SDL_Game_object.cpp" />
-    <ClCompile Include="src\Texture_manager.cpp" />
+    <ClCompile Include="src\Input_handler.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Texture_manager.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menu_button.cpp">
+      <Filter>Source files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Enemy.cpp">
+      <Filter>Source files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Game_state_machine.cpp">
+      <Filter>Source files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menu_state.cpp">
+      <Filter>Source files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Play_state.cpp">
+      <Filter>Source files\States</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Player.cpp">
+      <Filter>Source files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SDL_Game_object.cpp">
+      <Filter>Source files\Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Enemy.h" />
-    <ClInclude Include="src\Game.h" />
-    <ClInclude Include="src\Game_object.h" />
-    <ClInclude Include="src\Game_state.h" />
-    <ClInclude Include="src\Game_state_machine.h" />
-    <ClInclude Include="src\Input_handler.h" />
-    <ClInclude Include="src\Loader_params.h" />
-    <ClInclude Include="src\Menu_button.h" />
-    <ClInclude Include="src\Menu_state.h" />
-    <ClInclude Include="src\Player.h" />
-    <ClInclude Include="src\Play_state.h" />
-    <ClInclude Include="src\SDL_Game_object.h" />
-    <ClInclude Include="src\Texture_manager.h" />
-    <ClInclude Include="src\utils.h" />
-    <ClInclude Include="src\Vec2D.h" />
+    <ClInclude Include="src\Game.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Input_handler.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Texture_manager.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game_state.h">
+      <Filter>Header files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game_state_machine.h">
+      <Filter>Header files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils.h">
+      <Filter>Header files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vec2D.h">
+      <Filter>Header files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Loader_params.h">
+      <Filter>Header files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Menu_state.h">
+      <Filter>Header files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Play_state.h">
+      <Filter>Header files\States</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SDL_Game_object.h">
+      <Filter>Header files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Player.h">
+      <Filter>Header files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Menu_button.h">
+      <Filter>Header files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enemy.h">
+      <Filter>Header files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Game_object.h">
+      <Filter>Header files\Objects</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header files">
       <UniqueIdentifier>{01a3b2a0-7967-49d9-8c20-7b684dd2f5ff}</UniqueIdentifier>
+      <Extensions>h;hpp</Extensions>
     </Filter>
     <Filter Include="Source files">
       <UniqueIdentifier>{5e94d0f4-1f7d-484a-8621-3f5a86b4b22b}</UniqueIdentifier>
       <Extensions>*.cpp</Extensions>
+    </Filter>
+    <Filter Include="Header files\Utils">
+      <UniqueIdentifier>{f19f0d6d-aa96-4e1a-885f-09fb990930ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Objects">
+      <UniqueIdentifier>{4c9bfcf2-1098-400b-b46f-f26c2cb99ca0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Utils">
+      <UniqueIdentifier>{ebfe82ed-dff9-4a94-9969-95741b0fbf7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\States">
+      <UniqueIdentifier>{5c6e7384-bc3a-43e5-8f5f-0c2ecfc6bae4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\States">
+      <UniqueIdentifier>{203f21fa-07b9-4085-aedd-46407ba6475e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Objects">
+      <UniqueIdentifier>{69d8b24e-7914-4b5f-a1bd-58a6546a66b5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
