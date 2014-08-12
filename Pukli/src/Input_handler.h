@@ -2,6 +2,7 @@
 #define __INPUT_HANDLER_H_
 
 #include <vector>
+#include <algorithm>
 #include <SDL.h>
 #include "Vec2D.h"
 #include "utils.h"
@@ -28,6 +29,7 @@ public:
 	// Mouse functions
 	Vec2D* get_mouse_position() const { return m_mouse_position; }
 	bool get_mouse_button_state(int button) { return m_mouse_button_states[button]; }
+	void reset_mouse() { std::for_each(m_mouse_button_states.begin(), m_mouse_button_states.end(), [](bool b) {b = false;}); };
 
 	// Joystick functions
 	bool init_joysticks();
