@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\Enemy.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\Game_state_machine.cpp" />
+    <ClCompile Include="src\Input_handler.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Menu_button.cpp" />
+    <ClCompile Include="src\Menu_state.cpp" />
+    <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\Play_state.cpp" />
+    <ClCompile Include="src\SDL_Game_object.cpp" />
+    <ClCompile Include="src\Texture_manager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Enemy.h" />
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\Game_object.h" />
+    <ClInclude Include="src\Game_state.h" />
+    <ClInclude Include="src\Game_state_machine.h" />
+    <ClInclude Include="src\Input_handler.h" />
+    <ClInclude Include="src\Loader_params.h" />
+    <ClInclude Include="src\Menu_button.h" />
+    <ClInclude Include="src\Menu_state.h" />
+    <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\Play_state.h" />
+    <ClInclude Include="src\SDL_Game_object.h" />
+    <ClInclude Include="src\Texture_manager.h" />
+    <ClInclude Include="src\utils.h" />
+    <ClInclude Include="src\Vec2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{01a3b2a0-7967-49d9-8c20-7b684dd2f5ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{5e94d0f4-1f7d-484a-8621-3f5a86b4b22b}</UniqueIdentifier>
+      <Extensions>*.cpp</Extensions>
+    </Filter>
+  </ItemGroup>
+</Project>
