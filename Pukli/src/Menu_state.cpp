@@ -20,9 +20,9 @@ void Menu_state::render() {
 bool Menu_state::onEnter() {
 	LOG << "entering Menu_state";
 
-	if (!The_Texture_manager->load("assets/btn_start.png", "btn_start", The_Game->get_renderer()))
+	if (!The_Texture_manager->load("../assets/btn_start.png", "btn_start", The_Game->get_renderer()))
 		return false;
-	if (!The_Texture_manager->load("assets/btn_exit.png", "btn_exit", The_Game->get_renderer()))
+	if (!The_Texture_manager->load("../assets/btn_exit.png", "btn_exit", The_Game->get_renderer()))
 		return false;
 
 	Game_object* btn_start = new Menu_button(new Loader_params(100, 100, 150, 50, "btn_start"),0);

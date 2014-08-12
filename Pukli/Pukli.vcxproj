@@ -10,9 +10,40 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Enemy.h" />
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\Game_object.h" />
+    <ClInclude Include="src\Game_state.h" />
+    <ClInclude Include="src\Game_state_machine.h" />
+    <ClInclude Include="src\Input_handler.h" />
+    <ClInclude Include="src\Loader_params.h" />
+    <ClInclude Include="src\Menu_button.h" />
+    <ClInclude Include="src\Menu_state.h" />
+    <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\Play_state.h" />
+    <ClInclude Include="src\SDL_Game_object.h" />
+    <ClInclude Include="src\Texture_manager.h" />
+    <ClInclude Include="src\utils.h" />
+    <ClInclude Include="src\Vec2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Enemy.cpp" />
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\Game_state_machine.cpp" />
+    <ClCompile Include="src\Input_handler.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Menu_button.cpp" />
+    <ClCompile Include="src\Menu_state.cpp" />
+    <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\Play_state.cpp" />
+    <ClCompile Include="src\SDL_Game_object.cpp" />
+    <ClCompile Include="src\Texture_manager.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{72C7E777-9742-41CA-97F2-61CFD4E542D8}</ProjectGuid>
-    <RootNamespace>SDL</RootNamespace>
+    <ProjectGuid>{89D016BB-3B78-4EBB-8846-507E00A0A012}</ProjectGuid>
+    <RootNamespace>Pukli</RootNamespace>
+    <ProjectName>Pukli</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -39,12 +70,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Workspace\vs_dev_libs\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Workspace\vs_dev_libs\SDL2\lib\x86;$(LibraryPath)</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\Workspace\vs_dev_libs\SDL2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Workspace\vs_dev_libs\SDL2\lib\x86;$(LibraryPath)</LibraryPath>
+    <IncludePath>src\sdl2;src\sdl2_mixer;src\sdl2_image;$(IncludePath)</IncludePath>
+    <LibraryPath>lib\sdl2;lib\sdl2_mixer;lib\sdl2_image;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
+    <TargetName>game</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -54,8 +83,8 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -70,47 +99,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Game_state_machine.cpp" />
-    <ClCompile Include="Input_handler.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Menu_button.cpp" />
-    <ClCompile Include="Menu_state.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Play_state.cpp" />
-    <ClCompile Include="SDL_Game_object.cpp" />
-    <ClCompile Include="Texture_manager.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Enemy.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="Game_object.h" />
-    <ClInclude Include="Game_state.h" />
-    <ClInclude Include="Game_state_machine.h" />
-    <ClInclude Include="Input_handler.h" />
-    <ClInclude Include="Loader_params.h" />
-    <ClInclude Include="Menu_button.h" />
-    <ClInclude Include="Menu_state.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Play_state.h" />
-    <ClInclude Include="SDL_Game_object.h" />
-    <ClInclude Include="Texture_manager.h" />
-    <ClInclude Include="utils.h" />
-    <ClInclude Include="Vec2D.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="assets\bomb.bmp" />
-    <Image Include="assets\BombExploding.png" />
-    <Image Include="assets\bush.png" />
-    <Image Include="assets\chain.png" />
-    <Image Include="assets\soup.bmp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
