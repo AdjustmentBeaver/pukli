@@ -45,3 +45,12 @@ bool Menu_state::on_exit() {
 
 	return true;
 }
+
+void Menu_state::menu_to_play() {
+	LOG << "Play btn pressed";
+}
+
+void Menu_state::menu_to_exit() {
+	LOG << "Exit btn pressed";
+	The_Game->quit();
+}
