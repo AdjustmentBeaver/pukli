@@ -1,3 +1,6 @@
+#ifndef __GAME_OBJECT_FACTORY__
+#define __GAME_OBJECT_FACTORY__
+
 #include <string> 
 #include <map>
 #include "Game_object.h"
@@ -38,3 +41,5 @@ public:
 private:
 	std::map<std::string, Base_creator*> m_creators;
 };
+
+#endif
