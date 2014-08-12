@@ -9,6 +9,7 @@ public:
 	void update();
 	void draw();
 	void clean();
+	void load(const Loader_params* params);
 	~Player() {};
 private:
 	void handleInput();

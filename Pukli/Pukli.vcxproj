@@ -14,6 +14,7 @@
     <ClInclude Include="src\Enemy.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\Game_object.h" />
+    <ClInclude Include="src\Game_object_factory.h" />
     <ClInclude Include="src\Game_state.h" />
     <ClInclude Include="src\Game_state_machine.h" />
     <ClInclude Include="src\Input_handler.h" />
@@ -21,6 +22,7 @@
     <ClInclude Include="src\Menu_button.h" />
     <ClInclude Include="src\Menu_state.h" />
     <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\Player_creator.h" />
     <ClInclude Include="src\Play_state.h" />
     <ClInclude Include="src\SDL_Game_object.h" />
     <ClInclude Include="src\Texture_manager.h" />
@@ -30,6 +32,7 @@
   <ItemGroup>
     <ClCompile Include="src\Enemy.cpp" />
     <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\Game_object_factory.cpp" />
     <ClCompile Include="src\Game_state_machine.cpp" />
     <ClCompile Include="src\Input_handler.cpp" />
     <ClCompile Include="src\main.cpp" />
