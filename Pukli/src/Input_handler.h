@@ -23,15 +23,13 @@ public:
 	void clean();
 
 	// Keyboard functions
-	bool isKeyDown(SDL_Scancode key) { return (m_kbd_key_states && m_kbd_key_states[key]) ? true : false; }
+	bool is_key_down(SDL_Scancode key) { return (m_kbd_key_states && m_kbd_key_states[key]) ? true : false; }
 
 	// Mouse functions
-
 	Vec2D* get_mouse_position() const { return m_mouse_position; }
 	bool get_mouse_button_state(int button) { return m_mouse_button_states[button]; }
 
 	// Joystick functions
-
 	bool init_joysticks();
 	bool joysticks_initialized() { return m_joysticks_initialized; }
 	bool get_joy_button_state(SDL_JoystickID joy, int btn) { return m_joy_button_states[joy][btn]; }

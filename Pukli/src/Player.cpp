@@ -25,19 +25,19 @@ void Player::handleInput() {
 	}
 	
 	
-	if (The_Input_handler->isKeyDown(SDL_SCANCODE_ESCAPE))
+	if (The_Input_handler->is_key_down(SDL_SCANCODE_ESCAPE))
 		The_Game->quit();
 
-	if (The_Input_handler->isKeyDown(SDL_SCANCODE_UP))
+	if (The_Input_handler->is_key_down(SDL_SCANCODE_UP))
 		m_velocity.set_y(-2);
 
-	if (The_Input_handler->isKeyDown(SDL_SCANCODE_DOWN))
+	if (The_Input_handler->is_key_down(SDL_SCANCODE_DOWN))
 		m_velocity.set_y(2);
 
-	if (The_Input_handler->isKeyDown(SDL_SCANCODE_LEFT))
+	if (The_Input_handler->is_key_down(SDL_SCANCODE_LEFT))
 		m_velocity.set_x(-2);
 
-	if (The_Input_handler->isKeyDown(SDL_SCANCODE_RIGHT))
+	if (The_Input_handler->is_key_down(SDL_SCANCODE_RIGHT))
 		m_velocity.set_x(2);
 
 	//m_velocity = (*The_Input_handler->get_mouse_position() - m_position) / 100;
