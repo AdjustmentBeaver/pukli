@@ -29,6 +29,8 @@ public:
 	// SDL functions
 	SDL_Renderer* get_renderer() const { return m_renderer; }
 
+	//State machine functions
+	Game_state_machine* get_state_machine() { return m_game_state_machine; }
 private:
 	// Singleton
 	Game() {}
