@@ -12,6 +12,7 @@ public:
 	void draw();
 	void clean();
 
+	~SDL_Game_object() {}
 protected:
 	Vec2D m_position;
 	Vec2D m_velocity;

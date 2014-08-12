@@ -9,6 +9,7 @@ public:
 	void update();
 	void draw();
 	void clean();
+	~Enemy() {}
 };
 
 #endif // !__ENEMY_H__

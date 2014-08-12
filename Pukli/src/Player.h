@@ -9,6 +9,7 @@ public:
 	void update();
 	void draw();
 	void clean();
+	~Player() {};
 private:
 	void handleInput();
 };
