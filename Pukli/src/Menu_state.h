@@ -17,8 +17,6 @@ public:
 private:
 	static const std::string s_menu_id;
 	std::vector<Game_object*> m_game_objects;
-	static void menu_to_play();
-	static void menu_to_exit();
 };
 
 #endif
