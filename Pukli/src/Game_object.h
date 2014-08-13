@@ -8,9 +8,9 @@ public:
 	virtual void update() = 0;
 	virtual void draw() = 0;
 	virtual void clean() = 0;
+	virtual ~Game_object() {}
 protected:
 	Game_object(const Loader_params* params) {}
-	virtual ~Game_object() {}
 };
 
 #endif
