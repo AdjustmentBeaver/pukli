@@ -73,7 +73,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>src\sdl2;src\sdl2_mixer;src\sdl2_image;$(IncludePath)</IncludePath>
+    <IncludePath>src\sdl2;src\sdl2_mixer;src\sdl2_image;src\rapidjson;$(IncludePath)</IncludePath>
     <LibraryPath>lib\sdl2;lib\sdl2_mixer;lib\sdl2_image;$(LibraryPath)</LibraryPath>
     <ExecutablePath>$(ExecutablePath)</ExecutablePath>
     <TargetName>game</TargetName>
