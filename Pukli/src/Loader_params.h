@@ -8,7 +8,7 @@
 
 class Loader_params {
 public:
-	Loader_params(int x, int y, int width, int height, std::string texture_id = 0, int num_frames = 0) : m_x(x), m_y(y), m_width(width), m_height(height), m_texture_id(texture_id), m_num_frames(num_frames){}
+	Loader_params(int x, int y, int width, int height, std::string texture_id, int num_frames = 0) : m_x(x), m_y(y), m_width(width), m_height(height), m_texture_id(texture_id), m_num_frames(num_frames){}
 
 	int get_x() const { return m_x; }
 	int get_y() const { return m_y; }

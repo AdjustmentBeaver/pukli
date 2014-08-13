@@ -8,8 +8,10 @@
 const std::string Menu_state::s_menu_id = "MENU";
 
 void Menu_state::update() {
-	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
+	for (std::vector<Game_object*>::size_type i = 0; i<m_game_objects.size() ; i++) {
+		LOG << "now im gonna kill myself" << i << m_game_objects.size();
 		m_game_objects[i]->update();
+		LOG << "im done thank u!!!4444" << i << m_game_objects.size();
 	}
 }
 void Menu_state::render() {
@@ -34,9 +36,9 @@ bool Menu_state::on_enter() {
 bool Menu_state::on_exit() {
 	LOG << "exiting Menu_state";
 
-	for (std::vector<Game_object*>::const_iterator i = m_game_objects.begin(); i != m_game_objects.end(); i++) {
-		(*i)->clean();
-	}
+	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++)
+		m_game_objects[i]->clean();
+
 	m_game_objects.clear();
 	The_Texture_manager->clear_from_texture_map("btn_start");
 	The_Texture_manager->clear_from_texture_map("btn_exit");
@@ -45,11 +47,13 @@ bool Menu_state::on_exit() {
 }
 
 void Menu_state::menu_to_play() {
-	The_Game->get_state_machine()->change_state(new Play_state());
 	LOG << "Play btn pressed";
+	The_Game->get_state_machine()->change_state(new Play_state());
+	LOG << "fasz1";
 }
 
 void Menu_state::menu_to_exit() {
 	LOG << "Exit btn pressed";
+	The_Game->get_state_machine()->pop_state();
 	The_Game->quit();
 }

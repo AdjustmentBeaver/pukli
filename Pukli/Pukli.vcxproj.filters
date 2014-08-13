@@ -37,6 +37,9 @@
     <ClCompile Include="src\Game_object_factory.cpp">
       <Filter>Source files\Creator</Filter>
     </ClCompile>
+    <ClCompile Include="src\Pause_state.cpp">
+      <Filter>Source files\States</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -89,6 +92,9 @@
     </ClInclude>
     <ClInclude Include="src\Player_creator.h">
       <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pause_state.h">
+      <Filter>Header files\States</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
