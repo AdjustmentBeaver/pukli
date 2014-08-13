@@ -12,6 +12,8 @@ public:
 
 	void update();
 	void render();
+
+	const Game_state* get_current_state() const;
 private:
 	std::vector<Game_state*> m_states;
 };
