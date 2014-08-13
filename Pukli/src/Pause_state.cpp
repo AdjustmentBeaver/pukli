@@ -10,12 +10,12 @@
 const std::string Pause_state::s_pause_id = "PAUSE";
 
 void Pause_state::update() {
-	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
+	for (std::vector<Game_object*>::size_type i = 0; The_Game->get_state_machine()->get_current_state() == this && i < m_game_objects.size(); i++) {
 		m_game_objects[i]->update();
 	}
 }
 void Pause_state::render() {
-	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
+	for (std::vector<Game_object*>::size_type i = 0; The_Game->get_state_machine()->get_current_state() == this && i < m_game_objects.size(); i++) {
 		m_game_objects[i]->draw();
 	}
 }
@@ -35,8 +35,10 @@ bool Pause_state::on_enter() {
 }
 bool Pause_state::on_exit() {
 	LOG << "exiting Pause_state";
-	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++)
+	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
 		m_game_objects[i]->clean();
+		delete m_game_objects[i];
+	}
 	m_game_objects.clear();
 	The_Texture_manager->clear_from_texture_map("btn_resume");
 	The_Texture_manager->clear_from_texture_map("btn_menu");
@@ -53,5 +55,4 @@ void Pause_state::pause_to_menu() {
 
 void Pause_state::pause_to_play() {
 	The_Game->get_state_machine()->pop_state();
-	The_Game->quit();
 }
