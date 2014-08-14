@@ -16,6 +16,7 @@ public:
 	int get_height() const { return m_height; }
 	int get_num_frames() const { return m_num_frames; }
 	std::string get_texture_id() const { return m_texture_id; }
+	~Loader_params() {}
 private:
 	int m_x;
 	int m_y;
