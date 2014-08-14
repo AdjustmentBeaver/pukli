@@ -9,6 +9,7 @@ public:
 	void push_state(Game_state* state);
 	void pop_state();
 	void change_state(Game_state* state);
+	void clear() { while (!m_states.empty()) pop_state(); }
 
 	void update();
 	void render();
