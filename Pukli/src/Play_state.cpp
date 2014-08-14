@@ -29,7 +29,11 @@ bool Play_state::on_enter() {
 	if (!The_Texture_manager->load("../assets/default.bmp", "fasz", The_Game->get_renderer())) {
 		return false;
 	}
-	m_game_objects.push_back(new Player(new Loader_params(0, 0, 640, 480, "fasz")));
+
+	Loader_params * tmp = new Loader_params(100, 100, 150, 50, "fasz");
+	m_game_objects.push_back(new Player(tmp));
+	delete tmp;
+
 	return true;
 }
 
@@ -40,7 +44,7 @@ bool Play_state::on_exit() {
 		delete m_game_objects[i];
 	}
 	m_game_objects.clear();
-	The_Texture_manager->clear_from_texture_map("raccoon");
+	The_Texture_manager->clear_from_texture_map("fasz");
 
 	return true;
 }
