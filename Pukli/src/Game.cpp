@@ -26,11 +26,6 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 			if (m_renderer != 0) {
 				LOG << "[SUCC] Renderer Init";
 				SDL_SetRenderDrawColor(m_renderer, DEF_RENDER_COLOR_ALPHA);
-
-				if (!The_Texture_manager->load("../assets/BombExploding.png", "bomb", m_renderer))
-					return false;
-
-
 			} else {
 				LOG << "[FAIL] Renderer Init";
 				return false;
