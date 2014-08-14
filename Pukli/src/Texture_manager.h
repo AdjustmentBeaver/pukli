@@ -17,7 +17,10 @@ public:
 
 	// Caching
 	bool load(std::string file_name, std::string id, SDL_Renderer* renderer);
-	void clear_from_texture_map(std::string id) { SDL_DestroyTexture(m_texture_map[id]); m_texture_map.erase(id); }
+	void clear_from_texture_map(std::string id) {
+		SDL_DestroyTexture(m_texture_map[id]);
+		m_texture_map.erase(id);
+	}
 
 	// Rendering
 	void draw(std::string id, int x, int y, int width, int height, SDL_Renderer* renderer, SDL_RendererFlip flip = SDL_FLIP_NONE);
@@ -26,7 +29,7 @@ private:
 	// Singleton
 	Texture_manager() {}
 	static Texture_manager* s_instance;
-	
+
 	// Data
 	std::map<std::string, SDL_Texture*> m_texture_map;
 };
