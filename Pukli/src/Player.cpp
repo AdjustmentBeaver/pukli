@@ -29,10 +29,6 @@ void Player::handleInput() {
 	if (The_Input_handler->get_joy_button_state(0,0)) m_velocity = Vec2D();
 	}
 	
-	
-	if (The_Input_handler->is_key_down(SDL_SCANCODE_ESCAPE))
-		The_Game->quit();
-
 	if (The_Input_handler->is_key_down(SDL_SCANCODE_UP))
 		m_velocity.set_y(-2);
 
