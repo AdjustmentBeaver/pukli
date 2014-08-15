@@ -3,7 +3,7 @@
 
 #include <vector>
 #include "Game_state.h"
-#include "Game_object.h"
+class Game_object;
 
 class Menu_state : public Game_state {
 public:
