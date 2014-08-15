@@ -13,6 +13,10 @@ public:
 	void clean();
 	void load(const Loader_params* params);
 
+	const Vec2D& get_position() const { return m_position; }
+	const int get_width() const { return m_width; }
+	const int get_height() const { return m_height; }
+
 	~SDL_Game_object() {}
 protected:
 	Vec2D m_position;
