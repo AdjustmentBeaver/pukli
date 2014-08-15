@@ -8,7 +8,7 @@
 #include "Play_state.h"
 #include "utils.h"
 
-#define DEF_RENDER_COLOR_ALPHA 0, 255, 0, 255
+#define DEF_RENDER_COLOR_ALPHA 255, 255, 255, 255
 
 Game* Game::s_instance = 0;
 
