@@ -39,12 +39,8 @@ bool Play_state::on_enter() {
 		return false;
 	}
 
-	Loader_params * tmp = new Loader_params(0, 0, 50, 50, "fasz");
-	m_game_objects.push_back(new Player(tmp));
-	delete tmp;
-	tmp = new Loader_params(100, 100, 70, 70, "enemy");
-	m_game_objects.push_back(new Enemy(tmp));
-	delete tmp;
+	m_game_objects.push_back(new Player(new Loader_params(0, 0, 50, 50, "fasz")));
+	m_game_objects.push_back(new Enemy(new Loader_params(100, 100, 70, 70, "enemy")));
 
 	return true;
 }

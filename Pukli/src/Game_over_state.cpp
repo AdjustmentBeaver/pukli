@@ -24,14 +24,8 @@ bool Game_over_state::on_enter() {
 	if (!The_Texture_manager->load("../assets/btn_exit.png", "btn_menu", The_Game->get_renderer()))
 		return false;
 
-
-	Loader_params * tmp = new Loader_params(100, 100, 200, 200, "btn_restart");
-	m_game_objects.push_back(new Menu_button(tmp, game_over_to_play));
-	delete tmp;
-	tmp = new Loader_params(100, 500, 150, 50, "btn_menu");
-	m_game_objects.push_back(new Menu_button(tmp, game_over_to_main));
-	delete tmp;
-
+	m_game_objects.push_back(new Menu_button(new Loader_params(100, 100, 200, 200, "btn_restart"), game_over_to_play));
+	m_game_objects.push_back(new Menu_button(new Loader_params(100, 500, 150, 50, "btn_menu"), game_over_to_main));
 
 	return true;
 }

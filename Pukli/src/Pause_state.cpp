@@ -28,12 +28,8 @@ bool Pause_state::on_enter() {
 	if (!The_Texture_manager->load("../assets/soup.bmp", "btn_menu", The_Game->get_renderer()))
 		return false;
 
-	Loader_params * tmp = new Loader_params(100, 100, 150, 50, "btn_resume");
-	m_game_objects.push_back(new Menu_button(tmp, pause_to_menu));
-	delete tmp;
-	tmp = new Loader_params(100, 200, 150, 50, "btn_menu");
-	m_game_objects.push_back(new Menu_button(tmp, pause_to_play));
-	delete tmp;
+	m_game_objects.push_back(new Menu_button(new Loader_params(100, 100, 150, 50, "btn_resume"), pause_to_menu));
+	m_game_objects.push_back(new Menu_button(new Loader_params(100, 200, 150, 50, "btn_menu"), pause_to_play));
 
 	return true;
 }

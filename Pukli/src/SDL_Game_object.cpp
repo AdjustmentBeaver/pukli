@@ -10,6 +10,8 @@ SDL_Game_object::SDL_Game_object(const Loader_params* params) : Game_object(para
 
 	m_current_row = 0;
 	m_current_frame = 0;
+
+	delete params;
 }
 
 void SDL_Game_object::update() {
