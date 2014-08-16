@@ -55,3 +55,11 @@ void Menu_state::menu_to_exit() {
 	The_Game->get_state_machine()->pop_state();
 	The_Game->quit();
 }
+
+Menu_state::~Menu_state() {
+	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
+
+		delete m_game_objects[i];
+	}
+	LOG << "DESTR" << "menu_State";
+}

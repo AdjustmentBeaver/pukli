@@ -12,6 +12,7 @@ public:
 
 	bool on_enter();
 	bool on_exit();
+	~Game_over_state();
 
 	const std::string get_state_id() const { return s_game_over_id; };
 private:

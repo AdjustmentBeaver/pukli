@@ -11,7 +11,7 @@ void Game_state_machine::push_state(Game_state* state) {
 void Game_state_machine::pop_state() {
 	if (!m_states.empty()) {
 		if (m_states.back()->on_exit()) {
-			////delete m_states.back();
+			delete m_states.back();
 			m_states.pop_back();
 		}
 	}

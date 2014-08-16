@@ -53,3 +53,11 @@ void Game_over_state::render() {
 		m_game_objects[i]->draw();
 	}
 }
+
+
+Game_over_state::~Game_over_state() {
+	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
+
+		delete m_game_objects[i];
+	}
+}

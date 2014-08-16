@@ -78,3 +78,10 @@ bool Play_state::checkCollision(SDL_Game_object* p1, SDL_Game_object* p2) {
 	if (leftA >= rightB) { return false; }
 	return true;
 }
+
+Play_state::~Play_state() {
+	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
+
+		delete m_game_objects[i];
+	}
+}

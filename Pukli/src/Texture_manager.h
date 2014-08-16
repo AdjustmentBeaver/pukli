@@ -19,7 +19,7 @@ public:
 	// Caching
 	bool load(std::string file_name, std::string id, SDL_Renderer* renderer);
 	void clear_from_texture_map(std::string id) {
-		//SDL_DestroyTexture(m_texture_map[id]);
+		SDL_DestroyTexture(m_texture_map[id]);
 		m_texture_map.erase(id);
 		LOG << "freeing texture map";
 	}

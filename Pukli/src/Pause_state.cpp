@@ -58,3 +58,10 @@ void Pause_state::pause_to_play() {
 	The_Game->get_state_machine()->pop_state();
 	LOG << "Back to game";
 }
+
+Pause_state::~Pause_state() {
+	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
+
+		delete m_game_objects[i];
+	}
+}

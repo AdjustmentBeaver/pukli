@@ -13,7 +13,9 @@ public:
 
 	virtual const std::string get_state_id() const = 0;
 
-	virtual ~Game_state() {}
+	virtual ~Game_state() {
+		
+	}
 };
 
 #endif

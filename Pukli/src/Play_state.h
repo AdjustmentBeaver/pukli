@@ -16,7 +16,7 @@ public:
 
 	const std::string get_state_id() const { return s_play_id; };
 	bool checkCollision(SDL_Game_object* p1, SDL_Game_object* p2);
-
+	~Play_state();
 private:
 	static const std::string s_play_id;
 	std::vector<Game_object*> m_game_objects;

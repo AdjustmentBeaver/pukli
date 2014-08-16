@@ -14,6 +14,7 @@ public:
 	bool on_exit();
 
 	const std::string get_state_id() const { return s_pause_id; };
+	~Pause_state();
 private:
 	static const std::string s_pause_id;
 	std::vector<Game_object*> m_game_objects;
