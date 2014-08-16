@@ -18,7 +18,10 @@
           "y": 100,
           "width": 150,
           "height": 50,
-          "texture_id": "btn_start"
+          "texture_id": "btn_start",
+		  "num_frames": 1,
+		  "callback_id": 0,
+		  "anim_speed": 1
         },
         {
           "type": "Menu_button",
@@ -26,7 +29,10 @@
           "y": 100,
           "width": 150,
           "height": 50,
-          "texture_id": "btn_exit"
+          "texture_id": "btn_exit",
+          "num_frames": 1,
+		  "callback_id": 1,
+		  "anim_speed": 1
         }
       ]
     },
@@ -48,7 +54,10 @@
           "y": 0,
           "width": 64,
           "height": 64,
-          "texture_id": "player"
+          "texture_id": "player",
+          "num_frames": 1,
+		  "callback_id": null,
+		  "anim_speed": 1
         },
         {
           "type": "Enemy",
@@ -57,6 +66,9 @@
           "width": 64,
           "height": 64,
           "texture_id": "enemy"
+          "num_frames": 1,
+		  "callback_id": null,
+		  "anim_speed": 1
         }
       ]
     },
@@ -79,6 +91,9 @@
           "width": 150,
           "height": 50,
           "texture_id": "btn_resume"
+          "num_frames": 1,
+		  "callback_id": 0,
+		  "anim_speed": 1
         },
         {
           "type": "Menu_button",
@@ -87,6 +102,9 @@
           "width": 150,
           "height": 50,
           "texture_id": "btn_menu"
+          "num_frames": 1,
+		  "callback_id": 1,
+		  "anim_speed": 1
         }
       ]
     },
@@ -109,6 +127,9 @@
           "width": 150,
           "height": 50,
           "texture_id": "player"
+		  "num_frames": 1,
+		  "callback_id": 0,
+		  "anim_speed": 1
         },
         {
           "type": "Menu_button",
@@ -117,6 +138,9 @@
           "width": 150,
           "height": 50,
           "texture_id": "enemy"
+          "num_frames": 1,
+		  "callback_id": 1,
+		  "anim_speed": 1
         }
       ]
     }
