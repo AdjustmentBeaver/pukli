@@ -21,6 +21,7 @@
     <ClInclude Include="src\Game_state_machine.h" />
     <ClInclude Include="src\Input_handler.h" />
     <ClInclude Include="src\Loader_params.h" />
+    <ClInclude Include="src\Menu_button_creator.h" />
     <ClInclude Include="src\Menu_button.h" />
     <ClInclude Include="src\Menu_state.h" />
     <ClInclude Include="src\Pause_state.h" />

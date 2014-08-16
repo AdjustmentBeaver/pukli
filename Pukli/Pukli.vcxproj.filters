@@ -55,10 +55,10 @@
       <Filter>Header files</Filter>
     </ClInclude>
     <ClInclude Include="src\Game_state.h">
-      <Filter>Header files\States</Filter>
+      <Filter>Header files\Objects\States</Filter>
     </ClInclude>
     <ClInclude Include="src\Game_state_machine.h">
-      <Filter>Header files\States</Filter>
+      <Filter>Header files\Objects\States</Filter>
     </ClInclude>
     <ClInclude Include="src\utils.h">
       <Filter>Header files\Utils</Filter>
@@ -70,10 +70,10 @@
       <Filter>Header files\Utils</Filter>
     </ClInclude>
     <ClInclude Include="src\Menu_state.h">
-      <Filter>Header files\States</Filter>
+      <Filter>Header files\Objects\States</Filter>
     </ClInclude>
     <ClInclude Include="src\Play_state.h">
-      <Filter>Header files\States</Filter>
+      <Filter>Header files\Objects\States</Filter>
     </ClInclude>
     <ClInclude Include="src\SDL_Game_object.h">
       <Filter>Header files\Objects</Filter>
@@ -97,7 +97,7 @@
       <Filter>Header files</Filter>
     </ClInclude>
     <ClInclude Include="src\Pause_state.h">
-      <Filter>Header files\States</Filter>
+      <Filter>Header files\Objects\States</Filter>
     </ClInclude>
     <ClInclude Include="src\Texture_manager.h">
       <Filter>Header files</Filter>
@@ -106,7 +106,10 @@
       <Filter>Header files\Objects</Filter>
     </ClInclude>
     <ClInclude Include="src\Game_over_state.h">
-      <Filter>Header files\States</Filter>
+      <Filter>Header files\Objects\States</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Menu_button_creator.h">
+      <Filter>Header files\Creator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -127,9 +130,6 @@
     <Filter Include="Source files\Utils">
       <UniqueIdentifier>{ebfe82ed-dff9-4a94-9969-95741b0fbf7f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header files\States">
-      <UniqueIdentifier>{5c6e7384-bc3a-43e5-8f5f-0c2ecfc6bae4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source files\States">
       <UniqueIdentifier>{203f21fa-07b9-4085-aedd-46407ba6475e}</UniqueIdentifier>
     </Filter>
@@ -141,6 +141,9 @@
     </Filter>
     <Filter Include="Source files\Creator">
       <UniqueIdentifier>{bf070643-62d1-487c-9889-60e8beb3e0b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Objects\States">
+      <UniqueIdentifier>{5c6e7384-bc3a-43e5-8f5f-0c2ecfc6bae4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
