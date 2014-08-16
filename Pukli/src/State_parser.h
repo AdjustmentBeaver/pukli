@@ -13,7 +13,7 @@ class Game_object;
 class State_parser
 {
 public:
-	bool parse_state(const char* file_name, std::string state_id, std::vector<Game_object*> *p_objects);
+	bool parse_state(const char* file_name, std::string state_id, std::vector<Game_object*> *p_objects, std::vector<std::string> *p_texture_ids);
 private:
 	void parse_objects(const Value& p_state_root, std::vector<Game_object*> *p_objects);
 	
