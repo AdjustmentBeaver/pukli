@@ -8,7 +8,7 @@
 const std::string Menu_state::s_menu_id = "MENU";
 
 void Menu_state::update() {
-	for (std::vector<Game_object*>::size_type i = 0; The_Game->get_state_machine()->get_current_state()==this  && i<m_game_objects.size() ; i++) {
+	for (std::vector<Game_object*>::size_type i = 0; The_Game->get_state_machine()->get_current_state() == this && i < m_game_objects.size(); i++) {
 		m_game_objects[i]->update();
 	}
 }
