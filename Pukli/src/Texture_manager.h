@@ -19,13 +19,8 @@ public:
 	// Caching
 	bool load(std::string file_name, std::string id, SDL_Renderer* renderer);
 	void clear_from_texture_map(std::string id) {
-		auto iter = m_texture_map.find(id);
-		if (iter != m_texture_map.end()) {
-			SDL_DestroyTexture(iter->second);
-			m_texture_map.erase(iter);
-		}
-		else
-			LOG << "u should not be here dude";
+		SDL_DestroyTexture(m_texture_map[id]);
+		m_texture_map.erase(id);
 	}
 
 	// Rendering
