@@ -6,8 +6,10 @@
 #include "Menu_button.h"
 
 class Menu_button_creator : public Base_creator {
-	
-	Game_object* createGameObject() const
+public:
+	Menu_button_creator() {}
+
+	Game_object* create_game_object() const
 	{
 		return new Menu_button();
 	}
