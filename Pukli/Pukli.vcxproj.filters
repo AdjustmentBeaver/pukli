@@ -112,7 +112,7 @@
       <Filter>Header files\States</Filter>
     </ClInclude>
     <ClInclude Include="src\Menu_state.h">
-      <Filter>Source files\States</Filter>
+      <Filter>Header files\States</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -148,5 +148,8 @@
     <Filter Include="Header files\States">
       <UniqueIdentifier>{5c6e7384-bc3a-43e5-8f5f-0c2ecfc6bae4}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config\states.json" />
   </ItemGroup>
 </Project>

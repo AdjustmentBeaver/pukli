@@ -1,0 +1,124 @@
+{
+  "states": {
+    "MENU": {
+      "textures": [
+        {
+          "id": "btn_start",
+          "file_name": "../assets/btn_start.png"
+        },
+        {
+          "id": "btn_exit",
+          "file_name": "../assets/btn_exit.png"
+        }
+      ],
+      "objects": [
+        {
+          "type": "Menu_button",
+          "x": 100,
+          "y": 100,
+          "width": 150,
+          "height": 50,
+          "texture_id": "btn_start"
+        },
+        {
+          "type": "Menu_button",
+          "x": 100,
+          "y": 100,
+          "width": 150,
+          "height": 50,
+          "texture_id": "btn_exit"
+        }
+      ]
+    },
+    "PLAY": {
+      "textures": [
+        {
+          "id": "player",
+          "file_name": "../assets/player.png"
+        },
+        {
+          "id": "enemy",
+          "file_name": "../assets/enemy.png"
+        }
+      ],
+      "objects": [
+        {
+          "type": "Player",
+          "x": 0,
+          "y": 0,
+          "width": 64,
+          "height": 64,
+          "texture_id": "player"
+        },
+        {
+          "type": "Enemy",
+          "x": 200,
+          "y": 200,
+          "width": 64,
+          "height": 64,
+          "texture_id": "enemy"
+        }
+      ]
+    },
+    "PAUSE": {
+      "textures": [
+        {
+          "id": "btn_resume",
+          "file_name": "../assets/btn_resume.png"
+        },
+        {
+          "id": "btn_menu",
+          "file_name": "../assets/btn_menu.png"
+        }
+      ],
+      "objects": [
+        {
+          "type": "Menu_button",
+          "x": 100,
+          "y": 100,
+          "width": 150,
+          "height": 50,
+          "texture_id": "btn_resume"
+        },
+        {
+          "type": "Menu_button",
+          "x": 100,
+          "y": 200,
+          "width": 150,
+          "height": 50,
+          "texture_id": "btn_menu"
+        }
+      ]
+    },
+    "GAME_OVER": {
+      "textures": [
+        {
+          "id": "btn_restart",
+          "file_name": "../assets/btn_restart.png"
+        },
+        {
+          "id": "btn_exit",
+          "file_name": "../assets/btn_exit.png"
+        }
+      ],
+      "objects": [
+        {
+          "type": "Menu_button",
+          "x": 100,
+          "y": 100,
+          "width": 150,
+          "height": 50,
+          "texture_id": "player"
+        },
+        {
+          "type": "Menu_button",
+          "x": 100,
+          "y": 200,
+          "width": 150,
+          "height": 50,
+          "texture_id": "enemy"
+        }
+      ]
+    }
+  }
+}
