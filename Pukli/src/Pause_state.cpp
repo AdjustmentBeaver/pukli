@@ -37,7 +37,7 @@ bool Pause_state::on_exit() {
 	LOG << "exiting Pause_state";
 	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
 		m_game_objects[i]->clean();
-		delete m_game_objects[i];
+		////delete m_game_objects[i];
 	}
 	m_game_objects.clear();
 	The_Texture_manager->clear_from_texture_map("btn_resume");

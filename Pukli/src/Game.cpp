@@ -63,7 +63,7 @@ void Game::render() {
 void Game::clean() {
 	LOG << "[INFO] Cleanup";
 
-	The_Input_handler->clean();
+	//The_Input_handler->clean();
 
 	SDL_DestroyWindow(m_window);
 	SDL_DestroyRenderer(m_renderer);

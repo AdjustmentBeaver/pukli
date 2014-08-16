@@ -21,7 +21,7 @@ public:
 		// if the type is already registered, do nothing    
 		if(it != m_creators.end())
 		{
-			delete pCreator;      
+			//delete pCreator;      
 			return false;    
 		}
 		m_creators[typeID] = pCreator;
