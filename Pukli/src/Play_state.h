@@ -19,6 +19,7 @@ public:
 	~Play_state();
 private:
 	static const std::string s_play_id;
+	std::vector<std::string> m_texture_ids;
 	std::vector<Game_object*> m_game_objects;
 };
 

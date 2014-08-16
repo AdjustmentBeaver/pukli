@@ -2,7 +2,7 @@
 #define __PAUSE_STATE_H__
 
 #include <vector>
-#include "Game_state.h"
+#include "Menu_state.h"
 class Game_object;
 
 class Pause_state : public Menu_state {
@@ -14,6 +14,8 @@ public:
 	bool on_exit();
 
 	const std::string get_state_id() const { return s_pause_id; };
+	void set_callbacks(const std::vector<Callback>& callbacks);
+
 	~Pause_state();
 private:
 	static const std::string s_pause_id;

@@ -56,7 +56,6 @@ Main_menu_state::~Main_menu_state() {
 		m_game_objects[i]->clean();
 		delete m_game_objects[i];
 	}
-	LOG << "DESTR" << "Main_menu_State";
 }
 
 void Main_menu_state::set_callbacks(const std::vector<Callback>& callbacks) {

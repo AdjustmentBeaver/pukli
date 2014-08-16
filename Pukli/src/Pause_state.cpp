@@ -34,13 +34,10 @@ bool Pause_state::on_enter() {
 }
 bool Pause_state::on_exit() {
 	LOG << "exiting Pause_state";
-	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
-		m_game_objects[i]->clean();
-		////delete m_game_objects[i];
+	
+	for (std::vector<std::string>::size_type i = 0; i < m_texture_ids.size(); i++) {
+		The_Texture_manager->clear_from_texture_map(m_texture_ids[i]);
 	}
-	m_game_objects.clear();
-	The_Texture_manager->clear_from_texture_map("btn_resume");
-	The_Texture_manager->clear_from_texture_map("btn_menu");
 
 	The_Input_handler->reset_mouse();
 
@@ -60,7 +57,17 @@ void Pause_state::pause_to_play() {
 
 Pause_state::~Pause_state() {
 	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
-
+		m_game_objects[i]->clean();
 		delete m_game_objects[i];
+	}
+}
+
+void Main_menu_state::set_callbacks(const std::vector<Callback>& callbacks) {
+	// go through the game objects
+	for (int i = 0; i < m_game_objects.size(); i++) {
+		if (dynamic_cast<Menu_button*>(m_game_objects[i])) {
+			Menu_button* p_Button = dynamic_cast<Menu_button*>(m_game_objects[i]);
+			p_Button->set_callback(callbacks[p_Button->get_callback_id()]);
+		}
 	}
 }
