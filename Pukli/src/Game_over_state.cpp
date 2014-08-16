@@ -21,7 +21,7 @@ void Game_over_state::game_over_to_play() {
 
 bool Game_over_state::on_enter() {
 	State_parser state_parser;
-	state_parser.parse_state("test.xml", s_game_over_id, &m_game_objects, &m_texture_ids);
+	state_parser.parse_state("states.json", s_game_over_id, &m_game_objects, &m_texture_ids);
 
 	m_callbacks.push_back(game_over_to_main);
 	m_callbacks.push_back(game_over_to_play);

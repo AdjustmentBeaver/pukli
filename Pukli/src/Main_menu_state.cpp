@@ -21,7 +21,7 @@ void Main_menu_state::render() {
 
 bool Main_menu_state::on_enter() {
 	State_parser state_parser;
-	state_parser.parse_state("test.xml", s_menu_id, &m_game_objects, &m_texture_ids);
+	state_parser.parse_state("states.json", s_menu_id, &m_game_objects, &m_texture_ids);
 
 	m_callbacks.push_back(menu_to_play);
 	m_callbacks.push_back(menu_to_exit);

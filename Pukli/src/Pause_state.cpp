@@ -23,7 +23,7 @@ void Pause_state::render() {
 
 bool Pause_state::on_enter() {
 	State_parser state_parser;
-	state_parser.parse_state("test.xml", s_pause_id, &m_game_objects, &m_texture_ids);
+	state_parser.parse_state("states.json", s_pause_id, &m_game_objects, &m_texture_ids);
 
 	m_callbacks.push_back(pause_to_play);
 	m_callbacks.push_back(pause_to_menu);
