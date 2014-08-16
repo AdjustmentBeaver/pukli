@@ -6,6 +6,7 @@
 #include <fstream>
 #include "State_parser.h"
 #include "utils.h"
+#include "Game_object_factory.h"
 #include "Texture_manager.h"
 
 using namespace rapidjson;
@@ -42,7 +43,7 @@ void State_parser::parse_objects(const Value& p_state_root, std::vector<Game_obj
 		anim_speed = p_state_root[i]["anim_speed"].GetInt;
 		texture_id = p_state_root[i]["texture_id"].GetString;
 
-		Game_object* p_game_object = The_game_object_factory->create(obj_type);
+		Game_object* p_game_object = The_Game_object_factory->create(obj_type);
 		p_game_object->load(new Loader_params(x, y, width, height, texture_id, num_frames, callback_id, anim_speed));
 		p_objects->push_back(p_game_object);
 	}
