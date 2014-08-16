@@ -69,6 +69,9 @@
     <ClInclude Include="src\Loader_params.h">
       <Filter>Header files\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="src\Menu_state.h">
+      <Filter>Header files\States</Filter>
+    </ClInclude>
     <ClInclude Include="src\Play_state.h">
       <Filter>Header files\States</Filter>
     </ClInclude>
@@ -112,7 +115,7 @@
       <Filter>Header files\States</Filter>
     </ClInclude>
     <ClInclude Include="src\Menu_state.h">
-      <Filter>Header files\States</Filter>
+      <Filter>Source files\States</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -122,7 +125,7 @@
     </Filter>
     <Filter Include="Source files">
       <UniqueIdentifier>{5e94d0f4-1f7d-484a-8621-3f5a86b4b22b}</UniqueIdentifier>
-      <Extensions>*.cpp</Extensions>
+      <Extensions>cpp;c</Extensions>
     </Filter>
     <Filter Include="Header files\Utils">
       <UniqueIdentifier>{f19f0d6d-aa96-4e1a-885f-09fb990930ac}</UniqueIdentifier>
@@ -148,8 +151,14 @@
     <Filter Include="Header files\States">
       <UniqueIdentifier>{5c6e7384-bc3a-43e5-8f5f-0c2ecfc6bae4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Config files">
+      <UniqueIdentifier>{4620c28c-b2d1-4f5a-85be-5a01149c7abc}</UniqueIdentifier>
+      <Extensions>json</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="config\states.json" />
+    <None Include="config\states.json">
+      <Filter>Config files</Filter>
+    </None>
   </ItemGroup>
 </Project>

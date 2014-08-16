@@ -5,6 +5,8 @@
 #include "Menu_state.h"
 class Game_object;
 
+typedef void(*Callback)();
+
 class Main_menu_state : public Menu_state {
 public:
 	void update();
