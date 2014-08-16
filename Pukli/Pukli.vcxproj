@@ -50,6 +50,7 @@
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\Play_state.cpp" />
     <ClCompile Include="src\SDL_Game_object.cpp" />
+    <ClCompile Include="src\State_parser.cpp" />
     <ClCompile Include="src\Texture_manager.cpp" />
   </ItemGroup>
   <ItemGroup>
