@@ -39,7 +39,6 @@
     <ClCompile Include="src\Animated_graphic.cpp" />
     <ClCompile Include="src\Enemy.cpp" />
     <ClCompile Include="src\Game.cpp" />
-    <ClCompile Include="src\Game_object_factory.cpp" />
     <ClCompile Include="src\Game_over_state.cpp" />
     <ClCompile Include="src\Game_state_machine.cpp" />
     <ClCompile Include="src\Input_handler.cpp" />
@@ -50,6 +49,7 @@
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\Play_state.cpp" />
     <ClCompile Include="src\SDL_Game_object.cpp" />
+    <ClCompile Include="src\State_parser.cpp" />
     <ClCompile Include="src\Texture_manager.cpp" />
   </ItemGroup>
   <ItemGroup>
