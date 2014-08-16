@@ -4,11 +4,12 @@
 #include <string> 
 #include <map>
 #include "Game_object.h"
+#include <string.h>
 #include <iostream>
 
 class Base_creator {
 public:
-	virtual Game_object* createGameObject() const = 0; 
+	virtual Game_object* create_game_object() const = 0; 
 	virtual ~Base_creator() {}
 };
 
@@ -38,7 +39,7 @@ public:
 		}
 		
 		Base_creator* pCreator = (*it).second;   
-		return pCreator->createGameObject();
+		return pCreator->create_game_object();
 	}
 
 	// Singleton

@@ -23,6 +23,7 @@
     <ClInclude Include="src\Loader_params.h" />
     <ClInclude Include="src\Menu_button_creator.h" />
     <ClInclude Include="src\Menu_button.h" />
+    <ClInclude Include="src\Main_menu_state.h" />
     <ClInclude Include="src\Menu_state.h" />
     <ClInclude Include="src\Pause_state.h" />
     <ClInclude Include="src\Player.h" />
@@ -43,7 +44,7 @@
     <ClCompile Include="src\Input_handler.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Menu_button.cpp" />
-    <ClCompile Include="src\Menu_state.cpp" />
+    <ClCompile Include="src\Main_menu_state.cpp" />
     <ClCompile Include="src\Pause_state.cpp" />
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\Play_state.cpp" />

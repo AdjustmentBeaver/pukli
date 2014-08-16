@@ -33,3 +33,9 @@ void Menu_button::update() {
 void Menu_button::clean() {
 	SDL_Game_object::clean();
 }
+
+/*void Menu_button::load(const Loader_params *pParams){
+	SDL_Game_object::load(pParams);
+	m_callback_id = pParams->get_callback_id();
+	m_current_frame = MOUSE_OUT;
+}*/
