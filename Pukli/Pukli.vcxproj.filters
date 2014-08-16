@@ -31,9 +31,6 @@
     <ClCompile Include="src\SDL_Game_object.cpp">
       <Filter>Source files\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="src\Game_object_factory.cpp">
-      <Filter>Source files\Creator</Filter>
-    </ClCompile>
     <ClCompile Include="src\Pause_state.cpp">
       <Filter>Source files\States</Filter>
     </ClCompile>
