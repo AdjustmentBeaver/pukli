@@ -6,6 +6,7 @@
 #include "Game.h"
 #include "Texture_manager.h"
 #include "Input_handler.h"
+#include "State_parser.h"
 
 const std::string Pause_state::s_pause_id = "PAUSE";
 
@@ -21,16 +22,14 @@ void Pause_state::render() {
 }
 
 bool Pause_state::on_enter() {
+	State_parser state_parser;
+	state_parser.parse_state("test.xml", s_pause_id, &m_game_objects, &m_texture_ids);
+
+	m_callbacks.push_back(pause_to_play);
+	m_callbacks.push_back(pause_to_menu);
+	set_callbacks(m_callbacks);
+
 	LOG << "entering Pause_state";
-
-	if (!The_Texture_manager->load("../assets/chain.png", "btn_resume", The_Game->get_renderer()))
-		return false;
-	if (!The_Texture_manager->load("../assets/soup.bmp", "btn_menu", The_Game->get_renderer()))
-		return false;
-
-	m_game_objects.push_back(new Menu_button(new Loader_params(100, 100, 150, 50, "btn_resume"), pause_to_menu));
-	m_game_objects.push_back(new Menu_button(new Loader_params(100, 200, 150, 50, "btn_menu"), pause_to_play));
-
 	return true;
 }
 bool Pause_state::on_exit() {

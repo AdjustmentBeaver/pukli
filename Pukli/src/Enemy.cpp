@@ -17,4 +17,9 @@ void Enemy::update() {
 	SDL_Game_object::update();
 }
 
+void Enemy::load(const Loader_params *params)
+{
+	SDL_Game_object::load(params);
+}
+
 void Enemy::clean() {}

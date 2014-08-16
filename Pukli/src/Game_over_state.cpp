@@ -5,6 +5,7 @@
 #include "Game.h"
 #include "Texture_manager.h"
 #include "Animated_graphic.h"
+#include "State_parser.h"
 
 const std::string Game_over_state::s_game_over_id = "GAME_OVER";
 
@@ -19,13 +20,12 @@ void Game_over_state::game_over_to_play() {
 }
 
 bool Game_over_state::on_enter() {
-	if (!The_Texture_manager->load("../assets/btn_start.png", "btn_restart", The_Game->get_renderer()))
-		return false;
-	if (!The_Texture_manager->load("../assets/btn_exit.png", "btn_menu", The_Game->get_renderer()))
-		return false;
+	State_parser state_parser;
+	state_parser.parse_state("test.xml", s_game_over_id, &m_game_objects, &m_texture_ids);
 
-	m_game_objects.push_back(new Menu_button(new Loader_params(100, 100, 200, 200, "btn_restart"), game_over_to_play));
-	m_game_objects.push_back(new Menu_button(new Loader_params(100, 500, 150, 50, "btn_menu"), game_over_to_main));
+	m_callbacks.push_back(game_over_to_main);
+	m_callbacks.push_back(game_over_to_play);
+	set_callbacks(m_callbacks);
 
 	return true;
 }

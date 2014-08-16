@@ -5,7 +5,7 @@
 #include "Game_state.h"
 class Game_object;
 
-class Pause_state : public Game_state {
+class Pause_state : public Menu_state {
 public:
 	void update();
 	void render();
@@ -18,6 +18,7 @@ public:
 private:
 	static const std::string s_pause_id;
 	std::vector<Game_object*> m_game_objects;
+	std::vector<std::string> m_texture_ids;
 
 	static void pause_to_menu();
 	static void pause_to_play();

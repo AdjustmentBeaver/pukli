@@ -90,9 +90,6 @@
     <ClInclude Include="src\Game_object_factory.h">
       <Filter>Header files\Creator</Filter>
     </ClInclude>
-    <ClInclude Include="src\Player_creator.h">
-      <Filter>Header files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Pause_state.h">
       <Filter>Header files\States</Filter>
     </ClInclude>
@@ -116,6 +113,12 @@
     </ClInclude>
     <ClInclude Include="src\State_parser.h">
       <Filter>Header files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Player_creator.h">
+      <Filter>Header files\Creator</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Enemy_creator.h">
+      <Filter>Header files\Creator</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -4,12 +4,14 @@
 #include "Game_object_factory.h"
 #include "Player.h"
 
-class PlayerCreator : public Base_creator 
-{ 
-	Game_object* createGameObject() const  
-	{ 
-		return new Player(); 
-	} 
+class Player_creator : public Base_creator { 
+public:
+	Player_creator() {}
+
+	Game_object* create_game_object() const
+	{
+		return new Player();
+	}
 };
 
 #endif
