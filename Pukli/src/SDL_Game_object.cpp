@@ -19,17 +19,19 @@ void SDL_Game_object::update() {
 	m_position += m_velocity;
 }
 
-void SDL_Game_object::load(const Loader_params *pParams) 
+void SDL_Game_object::load(const Loader_params *params) 
 { 
-	m_position = Vec2D(pParams->get_x(), pParams->get_y());  
+	m_position = Vec2D(params->get_x(), params->get_y());  
 	m_velocity = Vec2D(0, 0);  
 	m_acceleration = Vec2D(0, 0);  
-	m_width = pParams->get_width();  
-	m_height = pParams->get_height(); 
-	m_texture_id = pParams->get_texture_id();
+	m_width = params->get_width();  
+	m_height = params->get_height(); 
+	m_texture_id = params->get_texture_id();
 	m_current_row = 1;  
 	m_current_frame = 1; 
-	m_num_frames = pParams->get_num_frames();
+	m_num_frames = params->get_num_frames();
+
+	Game_object::load(params);
 }
 
 void SDL_Game_object::draw() {
