@@ -80,7 +80,7 @@ Main_menu_state::~Main_menu_state() {
 	LOG << "DESTR" << "Main_menu_State";
 }
 
-/*void Main_menu_state::set_callbacks(const std::vector<Callback>& callbacks)
+void Main_menu_state::set_callbacks(const std::vector<Callback>& callbacks)
 {
 	// go through the game objects
 	for (int i = 0; i < m_game_objects.size(); i++)
@@ -91,4 +91,4 @@ Main_menu_state::~Main_menu_state() {
 			p_Button->set_callback(callbacks[p_Button->get_callback_id()]);
 		}
 	}
-}*/
+}

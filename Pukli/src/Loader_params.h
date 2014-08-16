@@ -20,7 +20,7 @@ public:
 	const int get_width() const { return m_width; }
 	const int get_height() const { return m_height; }
 	const std::string get_texture_id() const { return m_texture_id; }
-	const int get_callback_id() const { return m_callback_id };
+	const int get_callback_id() const { return m_callback_id; }
 	const int get_num_frames() const { return m_num_frames; }
 	const int get_anim_speed() const { return m_anim_speed; }
 

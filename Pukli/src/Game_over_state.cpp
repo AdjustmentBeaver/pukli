@@ -1,5 +1,5 @@
 #include "Game_over_state.h"
-#include "Menu_state.h"
+#include "Main_menu_state.h"
 #include "Menu_button.h"
 #include "Play_state.h"
 #include "Game.h"
@@ -10,7 +10,7 @@ const std::string Game_over_state::s_game_over_id = "GAME_OVER";
 
 void Game_over_state::game_over_to_main() {
 	The_Game->get_state_machine()->clear();
-	The_Game->get_state_machine()->change_state(new Menu_state());
+	The_Game->get_state_machine()->change_state(new Main_menu_state());
 }
 
 void Game_over_state::game_over_to_play() {

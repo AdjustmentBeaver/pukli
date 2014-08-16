@@ -16,6 +16,9 @@ public:
 	bool on_exit();
 
 	const std::string get_state_id() const { return s_menu_id; };
+
+	void set_callbacks(const std::vector<Callback>& callbacks);
+
 	~Main_menu_state();
 private:
 	static const std::string s_menu_id;

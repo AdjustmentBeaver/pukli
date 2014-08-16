@@ -4,7 +4,7 @@
 #include "Input_handler.h"
 #include "Player.h"
 #include "Enemy.h"
-#include "Menu_state.h"
+#include "Main_menu_state.h"
 #include "Play_state.h"
 #include "utils.h"
 
@@ -46,7 +46,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 
 	The_Input_handler->init_joysticks();
 	m_game_state_machine = new Game_state_machine();
-	m_game_state_machine->change_state(new Menu_state());
+	m_game_state_machine->change_state(new Main_menu_state());
 
 	return true;
 }

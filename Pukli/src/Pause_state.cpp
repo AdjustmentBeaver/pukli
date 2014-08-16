@@ -1,5 +1,5 @@
 #include "Pause_state.h"
-#include "Menu_state.h"
+#include "Main_menu_state.h"
 #include "Play_state.h"
 #include "Menu_button.h"
 #include "utils.h"
@@ -50,7 +50,7 @@ bool Pause_state::on_exit() {
 
 void Pause_state::pause_to_menu() {
 	The_Game->get_state_machine()->clear();
-	The_Game->get_state_machine()->change_state(new Menu_state());
+	The_Game->get_state_machine()->change_state(new Main_menu_state());
 	LOG << "Back to main menu";
 }
 
