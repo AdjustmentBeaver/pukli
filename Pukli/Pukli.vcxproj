@@ -30,6 +30,7 @@
     <ClInclude Include="src\Player_creator.h" />
     <ClInclude Include="src\Play_state.h" />
     <ClInclude Include="src\SDL_Game_object.h" />
+    <ClInclude Include="src\State_parser.h" />
     <ClInclude Include="src\Texture_manager.h" />
     <ClInclude Include="src\utils.h" />
     <ClInclude Include="src\Vec2D.h" />
