@@ -31,4 +31,6 @@ private:
 	std::map<std::string, Base_creator*> m_creators;
 };
 
+#define The_Game_object_factory Game_object_factory::instance()
+
 #endif
