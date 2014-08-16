@@ -50,6 +50,9 @@
     <ClCompile Include="src\SDL_Game_object.cpp" />
     <ClCompile Include="src\Texture_manager.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="config\states.json" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{89D016BB-3B78-4EBB-8846-507E00A0A012}</ProjectGuid>
     <RootNamespace>Pukli</RootNamespace>

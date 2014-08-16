@@ -55,10 +55,10 @@
       <Filter>Header files</Filter>
     </ClInclude>
     <ClInclude Include="src\Game_state.h">
-      <Filter>Header files\Objects\States</Filter>
+      <Filter>Header files\States</Filter>
     </ClInclude>
     <ClInclude Include="src\Game_state_machine.h">
-      <Filter>Header files\Objects\States</Filter>
+      <Filter>Header files\States</Filter>
     </ClInclude>
     <ClInclude Include="src\utils.h">
       <Filter>Header files\Utils</Filter>
@@ -70,10 +70,10 @@
       <Filter>Header files\Utils</Filter>
     </ClInclude>
     <ClInclude Include="src\Menu_state.h">
-      <Filter>Header files\Objects\States</Filter>
+      <Filter>Header files\States</Filter>
     </ClInclude>
     <ClInclude Include="src\Play_state.h">
-      <Filter>Header files\Objects\States</Filter>
+      <Filter>Header files\States</Filter>
     </ClInclude>
     <ClInclude Include="src\SDL_Game_object.h">
       <Filter>Header files\Objects</Filter>
@@ -97,7 +97,7 @@
       <Filter>Header files</Filter>
     </ClInclude>
     <ClInclude Include="src\Pause_state.h">
-      <Filter>Header files\Objects\States</Filter>
+      <Filter>Header files\States</Filter>
     </ClInclude>
     <ClInclude Include="src\Texture_manager.h">
       <Filter>Header files</Filter>
@@ -106,7 +106,7 @@
       <Filter>Header files\Objects</Filter>
     </ClInclude>
     <ClInclude Include="src\Game_over_state.h">
-      <Filter>Header files\Objects\States</Filter>
+      <Filter>Header files\States</Filter>
     </ClInclude>
     <ClInclude Include="src\Menu_button_creator.h">
       <Filter>Header files\Creator</Filter>
@@ -119,7 +119,7 @@
     </Filter>
     <Filter Include="Source files">
       <UniqueIdentifier>{5e94d0f4-1f7d-484a-8621-3f5a86b4b22b}</UniqueIdentifier>
-      <Extensions>*.cpp</Extensions>
+      <Extensions>cpp;c</Extensions>
     </Filter>
     <Filter Include="Header files\Utils">
       <UniqueIdentifier>{f19f0d6d-aa96-4e1a-885f-09fb990930ac}</UniqueIdentifier>
@@ -142,8 +142,17 @@
     <Filter Include="Source files\Creator">
       <UniqueIdentifier>{bf070643-62d1-487c-9889-60e8beb3e0b9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header files\Objects\States">
+    <Filter Include="Header files\States">
       <UniqueIdentifier>{5c6e7384-bc3a-43e5-8f5f-0c2ecfc6bae4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Config files">
+      <UniqueIdentifier>{4620c28c-b2d1-4f5a-85be-5a01149c7abc}</UniqueIdentifier>
+      <Extensions>json</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config\states.json">
+      <Filter>Config files</Filter>
+    </None>
   </ItemGroup>
 </Project>
