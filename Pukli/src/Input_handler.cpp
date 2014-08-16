@@ -49,9 +49,9 @@ void Input_handler::clean() {
 			SDL_JoystickClose(m_joysticks[i]);
 		}
 	}
-	delete m_mouse_position;
+	////delete m_mouse_position;
 	// Using a simple lambda function
-	std::for_each(m_joystick_values.begin(), m_joystick_values.end(), [](std::pair<Vec2D*, Vec2D*> val) {delete val.first; delete val.second; });
+	//::for_each(m_joystick_values.begin(), m_joystick_values.end(), [](std::pair<Vec2D*, Vec2D*> val) {//delete val.first; //delete val.second; });
 }
 
 // Joystick functions
