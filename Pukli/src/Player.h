@@ -5,8 +5,7 @@
 
 class Player : public SDL_Game_object {
 public:
-	Player(const Loader_params* params);
-	Player();
+	Player() {}
 	void update();
 	void draw();
 	void clean();

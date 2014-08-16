@@ -4,8 +4,7 @@
 #include "SDL_Game_object.h"
 
 class Animated_graphic : public SDL_Game_object {
-	Animated_graphic(const Loader_params* params, int anim_speed) :SDL_Game_object(params), m_anim_speed(anim_speed) {}
-
+	Animated_graphic() {}
 	void update();
 	void draw();
 	void clean();

@@ -1,8 +1,8 @@
 #include "Game_object_factory.h"
 
-const Game_object_factory::s_instance = 0;
+Game_object_factory* Game_object_factory::s_instance = 0;
 
-bool Game_object_factory::registerType(std::string typeID, Base_creator* pCreator) {
+bool Game_object_factory::register_type(std::string typeID, Base_creator* pCreator) {
 	std::map<std::string, Base_creator*>::iterator it = m_creators.find(typeID);
 
 	// if the type is already registered, do nothing    

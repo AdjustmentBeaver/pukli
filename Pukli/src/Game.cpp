@@ -1,5 +1,9 @@
 #include <iostream>
 #include "Game.h"
+#include "Game_object_factory.h"
+#include "Menu_button_creator.h"
+#include "Player_creator.h"
+#include "Enemy_creator.h"
 #include "Texture_manager.h"
 #include "Input_handler.h"
 #include "Player.h"
@@ -42,7 +46,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	m_running = true;
 
 	//Register types
-
+	The_Game_object_factory->register_type("Menu_button", new Menu_button_creator());
+	The_Game_object_factory->register_type("Player", new Player_creator());
+	The_Game_object_factory->register_type("Enemy", new Enemy_creator());
 
 	The_Input_handler->init_joysticks();
 	m_game_state_machine = new Game_state_machine();

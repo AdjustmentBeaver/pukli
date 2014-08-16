@@ -46,6 +46,9 @@
     <ClCompile Include="src\State_parser.cpp">
       <Filter>Source files\Parser</Filter>
     </ClCompile>
+    <ClCompile Include="src\Game_object_factory.cpp">
+      <Filter>Source files\Creator</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">

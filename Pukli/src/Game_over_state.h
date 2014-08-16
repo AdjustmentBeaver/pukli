@@ -20,8 +20,6 @@ private:
 	static const std::string s_game_over_id;
 	std::vector<std::string> m_texture_ids;
 	std::vector<Game_object*> m_game_objects;
-	std::vector<std::string> m_texture_ids;
-
 
 	static void game_over_to_main();
 	static void game_over_to_play();

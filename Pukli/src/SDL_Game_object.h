@@ -6,7 +6,7 @@
 
 class SDL_Game_object : public Game_object {
 public:
-	SDL_Game_object(const Loader_params* params);
+	SDL_Game_object() {}
 	
 	void update();
 	void draw();

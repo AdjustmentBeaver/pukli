@@ -2,8 +2,6 @@
 #include "Input_handler.h"
 #include "Game.h"
 
-Player::Player(const Loader_params* params) : SDL_Game_object(params) {}
-
 void Player::draw() {
 	SDL_Game_object::draw();
 }

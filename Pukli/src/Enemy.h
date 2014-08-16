@@ -5,8 +5,7 @@
 
 class Enemy : public SDL_Game_object {
 public:
-	Enemy(const Loader_params* params);
-	Enemy();
+	Enemy() {}
 	void update();
 	void draw();
 	void clean();

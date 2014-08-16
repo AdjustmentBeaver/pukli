@@ -21,7 +21,7 @@ void Game_over_state::game_over_to_play() {
 
 bool Game_over_state::on_enter() {
 	State_parser state_parser;
-	state_parser.parse_state("states.json", s_game_over_id, &m_game_objects, &m_texture_ids);
+	state_parser.parse_state("../config/states.json", s_game_over_id, &m_game_objects, &m_texture_ids);
 
 	m_callbacks.push_back(game_over_to_main);
 	m_callbacks.push_back(game_over_to_play);
@@ -58,9 +58,9 @@ Game_over_state::~Game_over_state() {
 	}
 }
 
-void Main_menu_state::set_callbacks(const std::vector<Callback>& callbacks) {
+void Game_over_state::set_callbacks(const std::vector<Callback>& callbacks) {
 	// go through the game objects
-	for (int i = 0; i < m_game_objects.size(); i++) {
+	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
 		if (dynamic_cast<Menu_button*>(m_game_objects[i])) {
 			Menu_button* p_Button = dynamic_cast<Menu_button*>(m_game_objects[i]);
 			p_Button->set_callback(callbacks[p_Button->get_callback_id()]);

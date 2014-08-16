@@ -5,8 +5,7 @@
 
 class Menu_button : public SDL_Game_object {
 public:
-	Menu_button(const Loader_params* params, void (*callback)());
-	Menu_button();
+	Menu_button() {}
 
 	void load(const Loader_params *pParams);
 	void draw();

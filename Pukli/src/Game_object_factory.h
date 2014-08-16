@@ -21,7 +21,7 @@ public:
 		return s_instance;
 	}
 	
-	bool registerType(std::string typeID, Base_creator* pCreator);
+	bool register_type(std::string typeID, Base_creator* pCreator);
 	Game_object* create(std::string typeID);
 private:
 	//Singleton

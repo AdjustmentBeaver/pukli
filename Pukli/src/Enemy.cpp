@@ -1,9 +1,5 @@
 #include "Enemy.h"
 
-Enemy::Enemy(const Loader_params* params) : SDL_Game_object(params) {
-	m_velocity = Vec2D(0.01,2);
-}
-
 void Enemy::draw() {
 	SDL_Game_object::draw();
 }

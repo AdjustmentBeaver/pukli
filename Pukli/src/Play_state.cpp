@@ -35,7 +35,7 @@ bool Play_state::on_enter() {
 	LOG << "entering Play_state";
 
 	State_parser state_parser;
-	state_parser.parse_state("states.json", s_play_id, &m_game_objects, &m_texture_ids);
+	state_parser.parse_state("../config/states.json", s_play_id, &m_game_objects, &m_texture_ids);
 
 	return true;
 }

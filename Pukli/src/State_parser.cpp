@@ -28,23 +28,23 @@ bool State_parser::parse_state(const char* file_name, std::string state_id, std:
 	return true;
 }
 
-void State_parser::parse_objects(const Value& p_state_root, std::vector<Game_object*> *p_objects){
+void State_parser::parse_objects(const Value& p_state_root, std::vector<Game_object*> *p_objects) {
 	int x, y, width, height, num_frames, callback_id, anim_speed;
 	std::string texture_id, obj_type;
 
-	for (SizeType i = 0; p_state_root.Size(); i++) {
-		obj_type = p_state_root[i]["type"].GetString;
-		x = p_state_root[i]["x"].GetInt;
-		y = p_state_root[i]["y"].GetInt;
-		width = p_state_root[i]["width"].GetInt;
-		height = p_state_root[i]["height"].GetInt;
-		num_frames = p_state_root[i]["num_frames"].GetInt;
-		callback_id = p_state_root[i]["callback_id"].GetInt;
-		anim_speed = p_state_root[i]["anim_speed"].GetInt;
-		texture_id = p_state_root[i]["texture_id"].GetString;
+	for (SizeType i = 0; i < p_state_root.Size(); i++) {
+		obj_type = p_state_root[i]["type"].GetString();
+		x = p_state_root[i]["x"].GetInt();
+		y = p_state_root[i]["y"].GetInt();
+		width = p_state_root[i]["width"].GetInt();
+		height = p_state_root[i]["height"].GetInt();
+		num_frames = p_state_root[i]["num_frames"].GetInt();
+		callback_id = p_state_root[i]["callback_id"].GetInt();
+		anim_speed = p_state_root[i]["anim_speed"].GetInt();
+		texture_id = p_state_root[i]["texture_id"].GetString();
 
 		Game_object* p_game_object = The_Game_object_factory->create(obj_type);
-		p_game_object->load(new Loader_params(x, y, width, height, texture_id, num_frames, callback_id, anim_speed));
+		p_game_object->load(new Loader_params(x, y, width, height, texture_id, callback_id, num_frames, anim_speed));
 		p_objects->push_back(p_game_object);
 	}
 }
@@ -53,8 +53,9 @@ void State_parser::parse_textures(const Value& p_state_root, std::vector<std::st
 	for (SizeType i = 0; i < p_state_root.Size(); i++) {
 		std::string id = p_state_root[i]["id"].GetString();
 		std::string file_name = p_state_root[i]["file_name"].GetString();
+		LOG << id << file_name;
 		p_texture_ids->push_back(id);
-		The_Texture_manager->load(file_name, id, The_Game->get_renderer);
+		The_Texture_manager->load(file_name, id, The_Game->get_renderer());
 	}
 }
 
