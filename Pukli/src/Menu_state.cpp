@@ -19,15 +19,18 @@ void Menu_state::render() {
 }
 
 bool Menu_state::on_enter() {
-	LOG << "entering Menu_state";
+	
 
 	if (!The_Texture_manager->load("../assets/btn_start.png", "btn_start", The_Game->get_renderer()))
 		return false;
 	if (!The_Texture_manager->load("../assets/btn_exit.png", "btn_exit", The_Game->get_renderer()))
 		return false;
 
+
 	m_game_objects.push_back(new Menu_button(new Loader_params(100, 100, 150, 50, "btn_start"), menu_to_play));
 	m_game_objects.push_back(new Menu_button(new Loader_params(100, 200, 150, 50, "btn_exit"), menu_to_exit));
+
+	LOG << "entering Menu_state";
 
 	return true;
 }

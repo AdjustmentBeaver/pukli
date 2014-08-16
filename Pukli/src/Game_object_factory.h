@@ -33,13 +33,26 @@ public:
 		std::map<std::string, Base_creator*>::iterator it = m_creators.find(typeID);
 		if (it == m_creators.end())    
 		{
-			std::cout << "could not find type: " << typeID << "\n";      return NULL; 
+			std::cout << "could not find type: " << typeID << "\n";      
+			return NULL; 
 		}
 		
-		Base_creator* pCreator = (*it).second;    return pCreator->createGameObject();
+		Base_creator* pCreator = (*it).second;   
+		return pCreator->createGameObject();
+	}
+
+	// Singleton
+	static Game_object_factory* instance() {
+		if (s_instance == 0)
+			s_instance = new Game_object_factory();
+		return s_instance;
 	}
 private:
 	std::map<std::string, Base_creator*> m_creators;
+
+	//Singleton
+	Game_object_factory() {}
+	static Game_object_factory* s_instance;
 };
 
 #endif

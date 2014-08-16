@@ -41,6 +41,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	LOG << "[SUCC] Game Init";
 	m_running = true;
 
+	//Register types
+
+
 	The_Input_handler->init_joysticks();
 	m_game_state_machine = new Game_state_machine();
 	m_game_state_machine->change_state(new Menu_state());
