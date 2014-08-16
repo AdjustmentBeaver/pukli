@@ -14,7 +14,10 @@ bool State_parser::parse_state(const char* file_name, std::string state_id, std:
 }
 
 void State_parser::parse_objects(const Value& p_state_root, std::vector<Game_object*> *p_objects){
+	int x, y, width, height, num_frames, callback_id, anim_speed;
+	std::string textureID;
 
+	p_state_root
 }
 
 void State_parser::parse_textures(const Value& p_state_root, std::vector<std::string> *p_texture_ids){
