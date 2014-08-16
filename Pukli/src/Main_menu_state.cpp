@@ -4,6 +4,7 @@
 #include "utils.h"
 #include "Game.h"
 #include "Texture_manager.h"
+#include "State_parser.h"
 
 const std::string Main_menu_state::s_menu_id = "MENU";
 
@@ -19,44 +20,22 @@ void Main_menu_state::render() {
 }
 
 bool Main_menu_state::on_enter() {
-	
-	//JSON Parse - new stuff
-	/*
-	
 	State_parser state_parser;
-	state_parser.parseState("test.xml", s_menuID, &m_gameObjects,&m_textureIDList);
+	state_parser.parse_state("test.xml", s_menu_id, &m_game_objects, &m_texture_ids);
 
-	m_callbacks.push_back(0);
 	m_callbacks.push_back(menu_to_play);
 	m_callbacks.push_back(menu_to_exit);
-
 	set_callbacks(m_callbacks);
 
-	*/
-
-	if (!The_Texture_manager->load("../assets/btn_start.png", "btn_start", The_Game->get_renderer()))
-		return false;
-	if (!The_Texture_manager->load("../assets/btn_exit.png", "btn_exit", The_Game->get_renderer()))
-		return false;
-
-
-	m_game_objects.push_back(new Menu_button(new Loader_params(100, 100, 150, 50, "btn_start"), menu_to_play));
-	m_game_objects.push_back(new Menu_button(new Loader_params(100, 200, 150, 50, "btn_exit"), menu_to_exit));
-
 	LOG << "entering Menu_state";
-
 	return true;
 }
 bool Main_menu_state::on_exit() {
 	LOG << "exiting Menu_state";
 
-	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
-		m_game_objects[i]->clean();
-		//delete m_game_objects[i];
+	for (std::vector<std::string>::size_type i = 0; i < m_texture_ids.size(); i++) {
+		The_Texture_manager->clear_from_texture_map(m_texture_ids[i]);
 	}
-	m_game_objects.clear();
-	The_Texture_manager->clear_from_texture_map("btn_start");
-	The_Texture_manager->clear_from_texture_map("btn_exit");
 
 	return true;
 }
@@ -74,19 +53,16 @@ void Main_menu_state::menu_to_exit() {
 
 Main_menu_state::~Main_menu_state() {
 	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
-
+		m_game_objects[i]->clean();
 		delete m_game_objects[i];
 	}
 	LOG << "DESTR" << "Main_menu_State";
 }
 
-void Main_menu_state::set_callbacks(const std::vector<Callback>& callbacks)
-{
+void Main_menu_state::set_callbacks(const std::vector<Callback>& callbacks) {
 	// go through the game objects
-	for (int i = 0; i < m_game_objects.size(); i++)
-	{
-		if (dynamic_cast<Menu_button*>(m_game_objects[i]))
-		{
+	for (int i = 0; i < m_game_objects.size(); i++) {
+		if (dynamic_cast<Menu_button*>(m_game_objects[i])) {
 			Menu_button* p_Button = dynamic_cast<Menu_button*>(m_game_objects[i]);
 			p_Button->set_callback(callbacks[p_Button->get_callback_id()]);
 		}
