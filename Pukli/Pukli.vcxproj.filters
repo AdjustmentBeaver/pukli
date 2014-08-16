@@ -157,8 +157,13 @@
     <Filter Include="Source files\Parser">
       <UniqueIdentifier>{a3b23493-613c-453f-a0ea-8acf2428e573}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Config files">
+      <UniqueIdentifier>{95c9ecd2-a6f4-447a-afd6-be6646ffaa99}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="config\states.json" />
+    <None Include="config\states.json">
+      <Filter>Config files</Filter>
+    </None>
   </ItemGroup>
 </Project>
