@@ -53,7 +53,7 @@ void Main_menu_state::menu_to_exit() {
 
 Main_menu_state::~Main_menu_state() {
 	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
-		m_game_objects[i]->clean();
+		//m_game_objects[i]->clean();
 		delete m_game_objects[i];
 	}
 }

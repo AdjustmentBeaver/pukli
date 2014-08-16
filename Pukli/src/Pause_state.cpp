@@ -57,7 +57,7 @@ void Pause_state::pause_to_play() {
 
 Pause_state::~Pause_state() {
 	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
-		m_game_objects[i]->clean();
+		//m_game_objects[i]->clean();
 		delete m_game_objects[i];
 	}
 }

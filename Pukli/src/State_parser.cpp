@@ -33,7 +33,7 @@ void State_parser::parse_objects(const Value& p_state_root, std::vector<Game_obj
 	std::string texture_id, obj_type;
 
 	for (SizeType i = 0; i < p_state_root.Size(); i++) {
-		obj_type = p_state_root[i]["type"].GetString();
+		obj_type = p_state_root[i]["type"].GetString();									
 		x = p_state_root[i]["x"].GetInt();
 		y = p_state_root[i]["y"].GetInt();
 		width = p_state_root[i]["width"].GetInt();

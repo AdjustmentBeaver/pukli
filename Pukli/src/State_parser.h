@@ -19,6 +19,7 @@ private:
 	void parse_textures(const Value& p_state_root, std::vector<std::string> *p_texture_ids);
 
 	std::string get_file_contents(const char *filename);
+
 };
 
 #endif

@@ -25,7 +25,6 @@ void SDL_Game_object::load(const Loader_params *params)
 }
 
 void SDL_Game_object::draw() {
-	LOG << m_texture_id;
 	The_Texture_manager->draw_frame(m_texture_id, round(m_position.get_x()),round(m_position.get_y()), m_width, m_height, m_current_row, m_current_frame, The_Game->get_renderer());
 }
 

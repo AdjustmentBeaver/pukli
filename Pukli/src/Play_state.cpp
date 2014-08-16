@@ -74,7 +74,7 @@ bool Play_state::checkCollision(SDL_Game_object* p1, SDL_Game_object* p2) {
 
 Play_state::~Play_state() {
 	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
-		m_game_objects[i]->clean();
+		//m_game_objects[i]->clean();
 		delete m_game_objects[i];
 	}
 }
