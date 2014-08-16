@@ -2,10 +2,10 @@
 #define __GAME_OVER_STATE_H__
 
 #include <vector>
-#include "Game_state.h"
+#include "Menu_state.h"
 class Game_object;
 
-class Game_over_state : public Game_state {
+class Game_over_state : public Menu_state {
 public:
 	void update();
 	void render();
@@ -15,8 +15,10 @@ public:
 	~Game_over_state();
 
 	const std::string get_state_id() const { return s_game_over_id; };
+	void set_callbacks(const std::vector<Callback>& callbacks);
 private:
 	static const std::string s_game_over_id;
+	std::vector<std::string> m_texture_ids;
 	std::vector<Game_object*> m_game_objects;
 
 	static void game_over_to_main();

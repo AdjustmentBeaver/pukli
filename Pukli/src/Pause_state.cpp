@@ -65,3 +65,13 @@ Pause_state::~Pause_state() {
 		delete m_game_objects[i];
 	}
 }
+
+void Main_menu_state::set_callbacks(const std::vector<Callback>& callbacks) {
+	// go through the game objects
+	for (int i = 0; i < m_game_objects.size(); i++) {
+		if (dynamic_cast<Menu_button*>(m_game_objects[i])) {
+			Menu_button* p_Button = dynamic_cast<Menu_button*>(m_game_objects[i]);
+			p_Button->set_callback(callbacks[p_Button->get_callback_id()]);
+		}
+	}
+}

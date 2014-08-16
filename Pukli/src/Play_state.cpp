@@ -8,6 +8,7 @@
 #include "Input_handler.h"
 #include "Game.h"
 #include "Game_over_state.h"
+#include "State_parser.h"
 
 const std::string Play_state::s_play_id = "PLAY";
 
@@ -32,27 +33,19 @@ void Play_state::render() {
 
 bool Play_state::on_enter() {
 	LOG << "entering Play_state";
-	if (!The_Texture_manager->load("../assets/default.bmp", "fasz", The_Game->get_renderer())) {
-		return false;
-	}
-	if (!The_Texture_manager->load("../assets/bush.png", "enemy", The_Game->get_renderer())) {
-		return false;
-	}
 
-	m_game_objects.push_back(new Player(new Loader_params(0, 0, 50, 50, "fasz")));
-	m_game_objects.push_back(new Enemy(new Loader_params(100, 100, 70, 70, "enemy")));
+	State_parser state_parser;
+	state_parser.parse_state("test.xml", s_play_id, &m_game_objects, &m_texture_ids);
 
 	return true;
 }
 
 bool Play_state::on_exit() {
 	LOG << "exiting Play_state";
-	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
-		m_game_objects[i]->clean();
-		////delete m_game_objects[i];
+
+	for (std::vector<std::string>::size_type i = 0; i < m_texture_ids.size(); i++) {
+		The_Texture_manager->clear_from_texture_map(m_texture_ids[i]);
 	}
-	m_game_objects.clear();
-	The_Texture_manager->clear_from_texture_map("fasz");
 
 	return true;
 }
@@ -81,7 +74,7 @@ bool Play_state::checkCollision(SDL_Game_object* p1, SDL_Game_object* p2) {
 
 Play_state::~Play_state() {
 	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
-
+		m_game_objects[i]->clean();
 		delete m_game_objects[i];
 	}
 }
