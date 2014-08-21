@@ -126,9 +126,9 @@
           "y": 100,
           "width": 150,
           "height": 50,
-          "texture_id": "btn_menu",
-		  "num_frames": 1,
-		  "callback_id": 0,
+          "texture_id": "btn_restart",
+          "num_frames": 1,
+		  "callback_id": 1,
 		  "anim_speed": 1
         },
         {
@@ -137,9 +137,9 @@
           "y": 200,
           "width": 150,
           "height": 50,
-          "texture_id": "btn_restart",
-          "num_frames": 1,
-		  "callback_id": 1,
+          "texture_id": "btn_menu",
+		  "num_frames": 1,
+		  "callback_id": 0,
 		  "anim_speed": 1
         }
       ]
