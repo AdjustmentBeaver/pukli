@@ -33,13 +33,14 @@ void State_parser::parse_objects(const Value& p_state_root, std::vector<Game_obj
 	std::string texture_id, obj_type;
 
 	for (SizeType i = 0; i < p_state_root.Size(); i++) {
-		obj_type = p_state_root[i]["type"].GetString();									
+		obj_type = p_state_root[i]["type"].GetString();
 		x = p_state_root[i]["x"].GetInt();
 		y = p_state_root[i]["y"].GetInt();
 		width = p_state_root[i]["width"].GetInt();
 		height = p_state_root[i]["height"].GetInt();
 		num_frames = p_state_root[i]["num_frames"].GetInt();
-		callback_id = p_state_root[i]["callback_id"].GetInt();
+		if (!p_state_root[i]["callback_id"].IsNull()) callback_id = p_state_root[i]["callback_id"].GetInt();
+		else callback_id = 0;
 		anim_speed = p_state_root[i]["anim_speed"].GetInt();
 		texture_id = p_state_root[i]["texture_id"].GetString();
 
