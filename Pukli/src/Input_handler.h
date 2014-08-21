@@ -7,6 +7,8 @@
 #include "Vec2D.h"
 #include "utils.h"
 
+#define SDL_BUTTONS_SIZE 4
+
 const enum MOUSE_BUTTONS {LEFT=1, MIDDLE=2, RIGHT=3};
 const Sint16 joystick_deadzone = 5000;
 
@@ -40,7 +42,7 @@ public:
 
 private:
 	// Singleton
-	Input_handler() :m_mouse_button_states(3, false), m_mouse_position(new Vec2D(0,0)) {}
+	Input_handler() :m_mouse_button_states(SDL_BUTTONS_SIZE, false), m_mouse_position(new Vec2D(0, 0)) {}
 	static Input_handler* s_instance;
 	
 	// Keyboard data & functions
