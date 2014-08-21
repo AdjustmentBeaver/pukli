@@ -49,6 +49,9 @@
     <ClCompile Include="src\Game_object_factory.cpp">
       <Filter>Source files\Creator</Filter>
     </ClCompile>
+    <ClCompile Include="src\Debug_window.cpp">
+      <Filter>Source files\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -122,6 +125,9 @@
     </ClInclude>
     <ClInclude Include="src\Enemy_creator.h">
       <Filter>Header files\Creator</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Debug_window.h">
+      <Filter>Header files\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

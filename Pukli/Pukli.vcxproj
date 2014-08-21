@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Animated_graphic.h" />
+    <ClInclude Include="src\Debug_window.h" />
     <ClInclude Include="src\Enemy.h" />
     <ClInclude Include="src\Enemy_creator.h" />
     <ClInclude Include="src\Game.h" />
@@ -38,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Animated_graphic.cpp" />
+    <ClCompile Include="src\Debug_window.cpp" />
     <ClCompile Include="src\Enemy.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\Game_object_factory.cpp" />
@@ -87,8 +89,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>src\sdl2;src\sdl2_mixer;src\sdl2_image;src\rapidjson;$(IncludePath)</IncludePath>
-    <LibraryPath>lib\sdl2;lib\sdl2_mixer;lib\sdl2_image;$(LibraryPath)</LibraryPath>
+    <IncludePath>src\sdl2;src\sdl2_mixer;src\sdl2_image;src\rapidjson;src\sdl2_ttf;$(IncludePath)</IncludePath>
+    <LibraryPath>lib\sdl2;lib\sdl2_mixer;lib\sdl2_image;lib\sdl2_ttf;$(LibraryPath)</LibraryPath>
     <ExecutablePath>$(ExecutablePath)</ExecutablePath>
     <TargetName>game</TargetName>
   </PropertyGroup>
@@ -100,7 +102,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_mixer.lib;SDL2_image.lib;SDL2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>

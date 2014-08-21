@@ -30,6 +30,22 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 			if (m_renderer != 0) {
 				LOG << "[SUCC] Renderer Init";
 				SDL_SetRenderDrawColor(m_renderer, DEF_RENDER_COLOR_ALPHA);
+
+				if (TTF_Init() != -1){
+					LOG << "[SUCC] TTF Init";
+					m_font = TTF_OpenFont("../assets/leves.ttf", 10);
+					if (m_font != NULL) {
+						LOG << "[SUCC] TTF Load";
+					}
+					else {
+						LOG << "[FAIL] TTF Load";
+						return false;
+					}
+				}
+				else {
+					LOG << "[FAIL] TTF Init";
+					return false;
+				}
 			} else {
 				LOG << "[FAIL] Renderer Init";
 				return false;

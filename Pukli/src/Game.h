@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <SDL.h>
+#include <SDL_ttf.h>
 #include "Game_object.h"
 #include "Game_state_machine.h"
 
@@ -29,6 +30,8 @@ public:
 	// SDL functions
 	SDL_Renderer* get_renderer() const { return m_renderer; }
 
+	TTF_Font* get_font() const { return m_font; }
+
 	//State machine functions
 	Game_state_machine* get_state_machine() { return m_game_state_machine; }
 private:
@@ -39,6 +42,7 @@ private:
 	// SDL data
 	SDL_Window* m_window;
 	SDL_Renderer* m_renderer;
+	TTF_Font* m_font;
 
 	// State machine
 	Game_state_machine* m_game_state_machine;
