@@ -22,6 +22,9 @@
     <ClInclude Include="src\Game_state.h" />
     <ClInclude Include="src\Game_state_machine.h" />
     <ClInclude Include="src\Input_handler.h" />
+    <ClInclude Include="src\Layer.h" />
+    <ClInclude Include="src\Level.h" />
+    <ClInclude Include="src\LevelParser.h" />
     <ClInclude Include="src\Loader_params.h" />
     <ClInclude Include="src\Menu_button_creator.h" />
     <ClInclude Include="src\Menu_button.h" />
@@ -34,6 +37,7 @@
     <ClInclude Include="src\SDL_Game_object.h" />
     <ClInclude Include="src\State_parser.h" />
     <ClInclude Include="src\Texture_manager.h" />
+    <ClInclude Include="src\TileLayer.h" />
     <ClInclude Include="src\utils.h" />
     <ClInclude Include="src\Vec2D.h" />
   </ItemGroup>
@@ -46,6 +50,7 @@
     <ClCompile Include="src\Game_over_state.cpp" />
     <ClCompile Include="src\Game_state_machine.cpp" />
     <ClCompile Include="src\Input_handler.cpp" />
+    <ClCompile Include="src\Level.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Menu_button.cpp" />
     <ClCompile Include="src\Main_menu_state.cpp" />
@@ -53,6 +58,7 @@
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\Play_state.cpp" />
     <ClCompile Include="src\SDL_Game_object.cpp" />
+    <ClCompile Include="src\TileLayer.cpp" />
     <ClCompile Include="src\State_parser.cpp" />
     <ClCompile Include="src\Texture_manager.cpp" />
   </ItemGroup>

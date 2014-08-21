@@ -52,6 +52,12 @@
     <ClCompile Include="src\Debug_window.cpp">
       <Filter>Source files\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="src\Level.cpp">
+      <Filter>Source files\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TileLayer.cpp">
+      <Filter>Source files\Levels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -129,6 +135,18 @@
     <ClInclude Include="src\Debug_window.h">
       <Filter>Header files\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="src\Level.h">
+      <Filter>Header files\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Layer.h">
+      <Filter>Header files\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TileLayer.h">
+      <Filter>Header files\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LevelParser.h">
+      <Filter>Header files\Levels</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header files">
@@ -171,6 +189,12 @@
     </Filter>
     <Filter Include="Config files">
       <UniqueIdentifier>{95c9ecd2-a6f4-447a-afd6-be6646ffaa99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Levels">
+      <UniqueIdentifier>{cf17dac9-3168-4249-99e7-05686f18d60d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Levels">
+      <UniqueIdentifier>{f7276af1-7698-4d3c-ac96-218c53aad261}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
