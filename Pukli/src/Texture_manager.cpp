@@ -4,14 +4,25 @@ Texture_manager* Texture_manager::s_instance = 0;
 
 bool Texture_manager::load(std::string file_name, std::string id, SDL_Renderer* renderer) {
 	SDL_Surface* temp_surface = IMG_Load(file_name.c_str());
-
 	if (temp_surface == 0) {
 		return false;
 	}
-
 	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, temp_surface);
 	SDL_FreeSurface(temp_surface);
+	if (texture != 0) {
+		m_texture_map[id] = texture;
+		return true;
+	}
+	return false;
+}
 
+bool Texture_manager::loadText(std::string text, SDL_Color color, TTF_Font* font, std::string id, SDL_Renderer* renderer) {
+	SDL_Surface* temp_surface = TTF_RenderText_Solid(font, text.c_str(), color);
+	if (temp_surface == 0) {
+		return false;
+	}
+	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, temp_surface);
+	SDL_FreeSurface(temp_surface);
 	if (texture != 0) {
 		m_texture_map[id] = texture;
 		return true;
