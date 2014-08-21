@@ -115,8 +115,8 @@
           "file_name": "../assets/btn_restart.png"
         },
         {
-          "id": "btn_exit",
-          "file_name": "../assets/btn_exit.png"
+          "id": "btn_menu",
+          "file_name": "../assets/btn_menu.png"
         }
       ],
       "objects": [
@@ -126,7 +126,7 @@
           "y": 100,
           "width": 150,
           "height": 50,
-          "texture_id": "btn_exit",
+          "texture_id": "btn_menu",
 		  "num_frames": 1,
 		  "callback_id": 0,
 		  "anim_speed": 1
