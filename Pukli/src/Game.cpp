@@ -31,18 +31,16 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 				LOG << "[SUCC] Renderer Init";
 				SDL_SetRenderDrawColor(m_renderer, DEF_RENDER_COLOR_ALPHA);
 
-				if (TTF_Init() != -1){
+				if (TTF_Init() != -1) {
 					LOG << "[SUCC] TTF Init";
 					m_font = TTF_OpenFont("../assets/leves.ttf", 10);
 					if (m_font != NULL) {
 						LOG << "[SUCC] TTF Load";
-					}
-					else {
+					} else {
 						LOG << "[FAIL] TTF Load";
 						return false;
 					}
-				}
-				else {
+				} else {
 					LOG << "[FAIL] TTF Init";
 					return false;
 				}
@@ -61,12 +59,15 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	LOG << "[SUCC] Game Init";
 	m_running = true;
 
-	//Register types
+	// Register types
 	The_Game_object_factory->register_type("Menu_button", new Menu_button_creator());
 	The_Game_object_factory->register_type("Player", new Player_creator());
 	The_Game_object_factory->register_type("Enemy", new Enemy_creator());
 
+	// Init joysticks
 	The_Input_handler->init_joysticks();
+
+	// Init Game State
 	m_game_state_machine = new Game_state_machine();
 	m_game_state_machine->change_state(new Main_menu_state());
 
@@ -90,8 +91,11 @@ void Game::clean() {
 
 	The_Input_handler->clean();
 
+	TTF_CloseFont(m_font);
 	SDL_DestroyWindow(m_window);
 	SDL_DestroyRenderer(m_renderer);
+	TTF_Quit();
+	IMG_Quit();
 	SDL_Quit();
 }
 
