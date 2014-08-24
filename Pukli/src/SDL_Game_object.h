@@ -14,6 +14,8 @@ public:
 	void load(const Loader_params* params);
 
 	const Vec2D& get_position() const { return m_position; }
+	const Vec2D& get_velocity() const { return m_velocity; }
+	const Vec2D& get_acceleration() const { return m_acceleration; }
 	const int get_width() const { return m_width; }
 	const int get_height() const { return m_height; }
 
