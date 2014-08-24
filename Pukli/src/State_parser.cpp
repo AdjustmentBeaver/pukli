@@ -54,7 +54,6 @@ void State_parser::parse_textures(const Value& p_state_root, std::vector<std::st
 	for (SizeType i = 0; i < p_state_root.Size(); i++) {
 		std::string id = p_state_root[i]["id"].GetString();
 		std::string file_name = p_state_root[i]["file_name"].GetString();
-		LOG << id << file_name;
 		p_texture_ids->push_back(id);
 		The_Texture_manager->load(file_name, id, The_Game->get_renderer());
 	}

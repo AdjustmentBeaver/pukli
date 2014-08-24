@@ -14,7 +14,7 @@ public:
 	bool on_exit();
 	~Game_over_state();
 
-	const std::string get_state_id() const { return s_game_over_id; };
+	const std::string& get_state_id() const { return s_game_over_id; };
 	void set_callbacks(const std::vector<Callback>& callbacks);
 private:
 	static const std::string s_game_over_id;

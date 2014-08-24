@@ -8,11 +8,14 @@
 
 const std::string Main_menu_state::s_menu_id = "MENU";
 
+Main_menu_state::~Main_menu_state() {}
+
 void Main_menu_state::update() {
 	for (std::vector<Game_object*>::size_type i = 0; The_Game->get_state_machine()->get_current_state() == this && i < m_game_objects.size(); i++) {
 		m_game_objects[i]->update();
 	}
 }
+
 void Main_menu_state::render() {
 	for (std::vector<Game_object*>::size_type i = 0; The_Game->get_state_machine()->get_current_state() == this && i < m_game_objects.size(); i++) {
 		m_game_objects[i]->draw();
@@ -30,12 +33,17 @@ bool Main_menu_state::on_enter() {
 	LOG << "entering Menu_state";
 	return true;
 }
+
 bool Main_menu_state::on_exit() {
 	LOG << "exiting Menu_state";
-
+	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
+		m_game_objects[i]->clean();
+		//delete m_game_objects[i];
+	}
 	for (std::vector<std::string>::size_type i = 0; i < m_texture_ids.size(); i++) {
 		The_Texture_manager->clear_from_texture_map(m_texture_ids[i]);
 	}
+	m_game_objects.clear();
 
 	return true;
 }
@@ -51,15 +59,7 @@ void Main_menu_state::menu_to_exit() {
 	The_Game->quit();
 }
 
-Main_menu_state::~Main_menu_state() {
-	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
-		//m_game_objects[i]->clean();
-		delete m_game_objects[i];
-	}
-}
-
 void Main_menu_state::set_callbacks(const std::vector<Callback>& callbacks) {
-	// go through the game objects
 	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
 		if (dynamic_cast<Menu_button*>(m_game_objects[i])) {
 			Menu_button* p_Button = dynamic_cast<Menu_button*>(m_game_objects[i]);

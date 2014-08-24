@@ -13,7 +13,7 @@ public:
 	bool on_enter();
 	bool on_exit();
 
-	const std::string get_state_id() const { return s_pause_id; };
+	const std::string& get_state_id() const { return s_pause_id; };
 	void set_callbacks(const std::vector<Callback>& callbacks);
 
 	~Pause_state();

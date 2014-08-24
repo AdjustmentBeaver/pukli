@@ -32,15 +32,19 @@ bool Game_over_state::on_enter() {
 
 bool Game_over_state::on_exit() {
 	LOG << "exiting game_over_state";
-
+	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
+		m_game_objects[i]->clean();
+		//delete m_game_objects[i];
+	}
 	for (std::vector<std::string>::size_type i = 0; i < m_texture_ids.size(); i++) {
 		The_Texture_manager->clear_from_texture_map(m_texture_ids[i]);
 	}
+	m_game_objects.clear();
 
 	return true;
 }
 void Game_over_state::update() {
-	for (std::vector<Game_object*>::size_type i = 0; The_Game->get_state_machine()->get_current_state() == this && i<m_game_objects.size(); i++) {
+	for (std::vector<Game_object*>::size_type i = 0; The_Game->get_state_machine()->get_current_state() == this && i < m_game_objects.size(); i++) {
 		m_game_objects[i]->update();
 	}
 }
@@ -51,12 +55,7 @@ void Game_over_state::render() {
 }
 
 
-Game_over_state::~Game_over_state() {
-	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
-		//m_game_objects[i]->clean();
-		delete m_game_objects[i];
-	}
-}
+Game_over_state::~Game_over_state() {}
 
 void Game_over_state::set_callbacks(const std::vector<Callback>& callbacks) {
 	// go through the game objects

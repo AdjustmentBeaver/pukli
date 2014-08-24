@@ -46,6 +46,11 @@ bool Play_state::on_exit() {
 	for (std::vector<std::string>::size_type i = 0; i < m_texture_ids.size(); i++) {
 		The_Texture_manager->clear_from_texture_map(m_texture_ids[i]);
 	}
+	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
+		m_game_objects[i]->clean();
+		//delete m_game_objects[i];
+	}
+	m_game_objects.clear();
 
 	return true;
 }
@@ -72,9 +77,4 @@ bool Play_state::checkCollision(SDL_Game_object* p1, SDL_Game_object* p2) {
 	return true;
 }
 
-Play_state::~Play_state() {
-	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
-		//m_game_objects[i]->clean();
-		delete m_game_objects[i];
-	}
-}
+Play_state::~Play_state() {}

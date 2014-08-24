@@ -14,7 +14,7 @@ public:
 	bool on_enter();
 	bool on_exit();
 
-	const std::string get_state_id() const { return s_play_id; };
+	const std::string& get_state_id() const { return s_play_id; };
 	bool checkCollision(SDL_Game_object* p1, SDL_Game_object* p2);
 	~Play_state();
 private:

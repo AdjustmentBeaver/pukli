@@ -15,7 +15,7 @@ public:
 	bool on_enter();
 	bool on_exit();
 
-	const std::string get_state_id() const { return s_menu_id; };
+	const std::string& get_state_id() const { return s_menu_id; };
 
 	void set_callbacks(const std::vector<Callback>& callbacks);
 

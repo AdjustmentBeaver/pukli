@@ -34,10 +34,14 @@ bool Pause_state::on_enter() {
 }
 bool Pause_state::on_exit() {
 	LOG << "exiting Pause_state";
-	
 	for (std::vector<std::string>::size_type i = 0; i < m_texture_ids.size(); i++) {
 		The_Texture_manager->clear_from_texture_map(m_texture_ids[i]);
 	}
+	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
+		m_game_objects[i]->clean();
+		//delete m_game_objects[i];
+	}
+	m_game_objects.clear();
 
 	The_Input_handler->reset_mouse();
 
@@ -55,12 +59,7 @@ void Pause_state::pause_to_play() {
 	LOG << "Back to game";
 }
 
-Pause_state::~Pause_state() {
-	for (std::vector<Game_object*>::size_type i = 0; i < m_game_objects.size(); i++) {
-		//m_game_objects[i]->clean();
-		delete m_game_objects[i];
-	}
-}
+Pause_state::~Pause_state() {}
 
 void Pause_state::set_callbacks(const std::vector<Callback>& callbacks) {
 	// go through the game objects
