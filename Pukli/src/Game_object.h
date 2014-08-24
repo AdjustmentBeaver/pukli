@@ -11,7 +11,6 @@ public:
 	virtual void clean() = 0;
 
 	virtual void load(const Loader_params* params) {
-		LOG << "deleting";
 		delete params;
 	}
 

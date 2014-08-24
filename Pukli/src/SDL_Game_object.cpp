@@ -10,7 +10,6 @@ void SDL_Game_object::update() {
 
 void SDL_Game_object::load(const Loader_params *params) 
 { 
-	LOG << "sld_load callin";
 	m_position = Vec2D(params->get_x(), params->get_y());  
 	m_velocity = Vec2D(0, 0);  
 	m_acceleration = Vec2D(0, 0);  

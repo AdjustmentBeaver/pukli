@@ -121,7 +121,6 @@ void Input_handler::on_joystick_axis_move(SDL_Event& event) {
 
 	// 0 & 1 -> left stick H,V axis; 3 & 4 -> right stick H,V axis
 	bool left_stick = event.jaxis.axis == 0 || event.jaxis.axis == 1;
-	LOG << "[INFO] stick:" << left_stick << "axis:" << (int)event.jaxis.axis;
 	Vec2D * the_stick = left_stick ? m_joystick_values[event.jaxis.which].first : m_joystick_values[event.jaxis.which].second;
 
 	setter = 0;
@@ -139,9 +138,6 @@ void Input_handler::on_joystick_axis_move(SDL_Event& event) {
 		return;
 		break;
 	}
-
-	LOG << event.jaxis.value;
-
 
 	// Calling the adequate joystick value setter (set_x/set_y) on the used stick; values(digital) : +1 right, -1 left, 0 middle
 	if (event.jaxis.value > joystick_deadzone)
