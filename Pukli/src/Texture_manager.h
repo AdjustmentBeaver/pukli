@@ -24,6 +24,7 @@ public:
 		SDL_DestroyTexture(m_texture_map[id]);
 		m_texture_map.erase(id);
 	}
+	bool load_rect(int w, int h, SDL_Color color, std::string id, SDL_Renderer* renderer);
 
 	// Rendering
 	void draw(std::string id, int x, int y, int width, int height, SDL_Renderer* renderer, SDL_RendererFlip flip = SDL_FLIP_NONE);
@@ -31,7 +32,7 @@ public:
 	void draw_text(std::string id, int x, int y, SDL_Renderer* renderer, SDL_RendererFlip flip = SDL_FLIP_NONE);
 
 	// Query
-	int Query_texture(const std::string texture, int* w, int* h) { return SDL_QueryTexture(m_texture_map[texture], 0,0,w,h); }
+	int query_texture(const std::string texture, int* w, int* h) { return SDL_QueryTexture(m_texture_map[texture], 0,0,w,h); }
 private:
 	// Singleton
 	Texture_manager() {}

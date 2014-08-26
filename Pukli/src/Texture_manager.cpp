@@ -24,6 +24,22 @@ bool Texture_manager::load_text(std::string text, SDL_Color color, TTF_Font* fon
 	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, temp_surface);
 	SDL_FreeSurface(temp_surface);
 	if (texture != 0) {
+		SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
+		SDL_SetTextureAlphaMod(texture, color.a);
+		m_texture_map[id] = texture;
+		return true;
+	}
+	return false;
+}
+
+bool Texture_manager::load_rect(int w, int h, SDL_Color color, std::string id, SDL_Renderer* renderer) {
+	SDL_Surface* s = SDL_CreateRGBSurface(0, w, h, 32, 0, 0, 0, 0);
+	SDL_FillRect(s, 0, SDL_MapRGB(s->format, color.r, color.g, color.b));
+	SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, s);
+	SDL_FreeSurface(s);
+	if (texture != 0) {
+		SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
+		SDL_SetTextureAlphaMod(texture, color.a);
 		m_texture_map[id] = texture;
 		return true;
 	}
@@ -31,7 +47,7 @@ bool Texture_manager::load_text(std::string text, SDL_Color color, TTF_Font* fon
 }
 
 void Texture_manager::draw(std::string id, int x, int y, int width, int height, SDL_Renderer* renderer, SDL_RendererFlip flip) {
-	draw_frame(id,x,y,width,height,0,0,renderer, flip);
+	draw_frame(id, x, y, width, height, 0, 0, renderer, flip);
 }
 
 void Texture_manager::draw_frame(std::string id, int x, int y, int width, int height, int current_row, int current_frame, SDL_Renderer* renderer, SDL_RendererFlip flip) {
