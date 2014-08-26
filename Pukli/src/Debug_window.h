@@ -6,6 +6,8 @@
 #include <vector>
 #include <algorithm>
 #include "SDL_Game_object.h"
+#include "Texture_manager.h"
+#include "Game.h"
 
 class Debug_watcher {
 public:
@@ -19,11 +21,17 @@ public:
 		for (std::vector<I_Watch*>::size_type i = 0; i < m_watches.size(); i++) {
 			delete m_watches[i];
 		}
+		The_Texture_manager->clear_from_texture_map(m_background_id);
 	}
 
 	// Functionality
-	template <class T> void add(const std::string name, const T& value) {
-		m_watches.push_back(new Watch<T>(name, value));
+	template <class T> void add(std::string name, const T& value) {
+		int tmp_width, tmp_height;
+		Watch<T>* watch = new Watch<T>(name, value);
+		The_Texture_manager->load_text(watch->get_name(), m_text_color, The_Game->get_font(), m_watch_prefix + name, The_Game->get_renderer());
+		The_Texture_manager->query_texture(m_watch_prefix + name, &tmp_width, &tmp_height);
+		m_watches.push_back(watch);
+
 	}
 	void remove(const std::string name) {
 		auto itr = std::find_if(m_watches.begin(), m_watches.end(), [&](const I_Watch* a) {if (a->get_name() == name) return true; return false; });
@@ -33,10 +41,13 @@ public:
 		}
 	}
 	void draw(int x, int y);
+	void update();
 private:
 	// Singleton
+	Debug_watcher() : m_text_color(SDL_Color{ 255, 255, 255, 255 }), m_bkg_color(SDL_Color{ 0, 0, 0, 100 }), m_bkg_width(1), m_bkg_height(1) {
+		The_Texture_manager->load_rect(m_bkg_width, m_bkg_height, m_bkg_color, m_background_id, The_Game->get_renderer());
+	}
 	static Debug_watcher* s_instance;
-	Debug_watcher() {}
 	Debug_watcher(const Debug_watcher&);
 	void operator= (const Debug_watcher&);
 
@@ -65,9 +76,14 @@ private:
 	};
 
 	std::vector<I_Watch*> m_watches;
-
+	const std::string m_background_id = "_watcher_background";
+	const std::string m_watch_prefix = "_watch_";
 	// Rendering
-	static const int padding = 10;
+	const int m_padding = 10;
+	int m_bkg_width, m_bkg_height;
+	SDL_Color m_text_color;
+	SDL_Color m_bkg_color;
+
 };
 
 #define The_Debug_Watcher Debug_watcher::instance()

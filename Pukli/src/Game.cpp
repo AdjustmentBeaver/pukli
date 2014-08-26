@@ -70,14 +70,12 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	// Init Game State
 	m_game_state_machine = new Game_state_machine();
 	m_game_state_machine->change_state(new Main_menu_state());
-
-	The_Debug_Watcher->add("state", m_game_state_machine->get_current_state()->get_state_id());
-
 	return true;
 }
 
 void Game::update() {
 	m_game_state_machine->update();
+	The_Debug_Watcher->update();
 }
 
 void Game::render() {
