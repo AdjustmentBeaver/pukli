@@ -4,7 +4,10 @@
 #include "Debug_window.h"
 
 void Player::draw() {
-	SDL_Game_object::draw();
+	//SDL_Game_object::draw();
+	SDL_SetRenderDrawColor(The_Game->get_renderer(), 0, 0, 0, 255);
+	SDL_RenderDrawLine(The_Game->get_renderer(), m_position.get_x(), m_position.get_y(), m_position.get_x() + m_velocity.get_x(), m_position.get_y() + m_velocity.get_y());
+	SDL_SetRenderDrawColor(The_Game->get_renderer(), 255, 255, 255, 255);
 }
 
 void Player::update() {
