@@ -58,6 +58,9 @@
     <ClCompile Include="src\TileLayer.cpp">
       <Filter>Source files\Levels</Filter>
     </ClCompile>
+    <ClCompile Include="src\Camera.cpp">
+      <Filter>Source files\Camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Game.h">
@@ -147,6 +150,9 @@
     <ClInclude Include="src\LevelParser.h">
       <Filter>Header files\Levels</Filter>
     </ClInclude>
+    <ClInclude Include="src\Camera.h">
+      <Filter>Header files\Camera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header files">
@@ -195,6 +201,12 @@
     </Filter>
     <Filter Include="Source files\Levels">
       <UniqueIdentifier>{f7276af1-7698-4d3c-ac96-218c53aad261}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Camera">
+      <UniqueIdentifier>{b85cba08-f929-43f2-85fd-7d5056bb7980}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Camera">
+      <UniqueIdentifier>{6b817d29-40d2-4d98-99f4-2777689641f3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
