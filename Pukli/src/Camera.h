@@ -1,36 +1,22 @@
 #ifndef __CAMERA__
 #define __CAMERA__
 
-#include "Vec2D.h"
-
 class Camera
 {
 public:
-	void update(Vec2D velocity);
-	void set_target(Vec2D* target) { m_target = target; }
-	void set_position(const Vec2D& position) { m_position = position; }
-	Vec2D get_position() const;
-
-	//Singleton
-	static Camera* instance()
-	{
-		if (s_camera == 0)
-		{
-			s_camera = new Camera();
-		}
-		return s_camera;
-	}
-
-private:
 	Camera();
 	~Camera();
 
-	Vec2D* m_target;
-	Vec2D m_position;
+	/*
+		Talán valami ilyan lenne jó. 
+		Ezen belül pedig lenne a játékosok egymáshoz viszonyított pozíciójának a vizsgálata, 
+		utána pedig a SDL2_gfx rotozoomSurfaceXY (SDL_Surface *src, double angle, double zoomx, double zoomy, int smooth)
+		????
+	*/
+	void update(SDL_Surface* surface, const std::vector<Game_object*> p_player_objects);
 
-	static Camera* s_camera;
+private:
+
 };
-
-#define The_camera Camera::instance();
 
 #endif
