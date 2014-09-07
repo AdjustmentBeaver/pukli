@@ -1,6 +1,10 @@
 #ifndef __CAMERA__
 #define __CAMERA__
 
+#include <SDL.h>
+#include <vector>
+#include "Game_object.h"
+
 class Camera
 {
 public:
