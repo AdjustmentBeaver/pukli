@@ -2,11 +2,13 @@
 #include "Input_handler.h"
 #include "Game.h"
 #include "Debug_window.h"
+#include "SDL2_gfxPrimitives.h"
 
 void Player::draw() {
 	//SDL_Game_object::draw();
 	SDL_SetRenderDrawColor(The_Game->get_renderer(), 0, 0, 0, 255);
-	SDL_RenderDrawLine(The_Game->get_renderer(), m_position.get_x(), m_position.get_y(), m_position.get_x() + m_velocity.get_x(), m_position.get_y() + m_velocity.get_y());
+	//SDL_RenderDrawLine(The_Game->get_renderer(), m_position.get_x(), m_position.get_y(), m_position.get_x() + m_velocity.get_x(), m_position.get_y() + m_velocity.get_y());
+	thickLineRGBA(The_Game->get_renderer(), m_position.get_x(), m_position.get_y(), m_position.get_x() + m_velocity.get_x(), m_position.get_y() + m_velocity.get_y(), 5, 0, 0, 0, 255);
 	SDL_SetRenderDrawColor(The_Game->get_renderer(), 255, 255, 255, 255);
 }
 
@@ -21,6 +23,7 @@ void Player::load(const Loader_params *params) {
 	SDL_Game_object::load(params);
 	The_Debug_Watcher->add("player x", m_position.get_x());
 	The_Debug_Watcher->add("player y", m_position.get_y());
+	m_velocity = Vec2D(1.0, 1.0);
 }
 
 void Player::clean() {
@@ -29,23 +32,29 @@ void Player::clean() {
 }
 
 void Player::handleInput() {
-	m_velocity = Vec2D(0, 0);
+	//m_velocity = Vec2D(0, 0);
 	if (The_Input_handler->joysticks_initialized()) {
 		double lx = The_Input_handler->get_joy_x_val(0, 1), ly = The_Input_handler->get_joy_y_val(0, 1);
 		m_acceleration = Vec2D(lx / 10.0, ly / 10.0);
 		if (The_Input_handler->get_joy_button_state(0, 0)) m_velocity = Vec2D();
 	}
-	if (The_Input_handler->is_key_down(SDL_SCANCODE_UP))
+
+	/*if (The_Input_handler->is_key_down(SDL_SCANCODE_UP))
 		m_velocity.set_y(-2);
 
 	if (The_Input_handler->is_key_down(SDL_SCANCODE_DOWN))
 		m_velocity.set_y(2);
+	*/
 
 	if (The_Input_handler->is_key_down(SDL_SCANCODE_LEFT))
-		m_velocity.set_x(-2);
+	{
+		m_velocity.rotate(-2);
+	}
 
 	if (The_Input_handler->is_key_down(SDL_SCANCODE_RIGHT))
-		m_velocity.set_x(2);
+	{
+		m_velocity.rotate(2);
+	}
 }
 
 Player::~Player() {}

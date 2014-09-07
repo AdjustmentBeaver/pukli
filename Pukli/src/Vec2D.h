@@ -1,6 +1,8 @@
 #ifndef __VEC_2D__
 #define __VEC_2D__
 
+#define _USE_MATH_DEFINES
+
 #include <math.h>
 #include "utils.h"
 
@@ -17,6 +19,16 @@ public:
 	double length() const { return sqrt(m_x * m_x + m_y * m_y); }
 
 	void normalize() { *this *= length() > 0 ? (1 / length()) : 1; }
+
+	void rotate(double angle) {
+		double rad = angle * M_PI / 180;
+		double cs = cos(rad);
+		double sn = sin(rad);
+		double tmpx = m_x * cs - m_y * sn;
+		double tmpy = m_x * sn + m_y * cs;
+		m_x = tmpx;
+		m_y = tmpy;
+	}
 
 	Vec2D& operator+=(const Vec2D& v2) {
 		m_x += v2.m_x;
